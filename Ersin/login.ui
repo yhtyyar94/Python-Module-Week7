@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image:url(:/images/Ersin/login.jpg)</string>
+     <string notr="true">background-image: url(:/images/Ersin/images/login.jpg);</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -43,7 +43,7 @@
    <widget class="QTextEdit" name="Username">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>460</x>
       <y>230</y>
       <width>171</width>
       <height>31</height>
@@ -63,7 +63,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QTextEdit" name="Password">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>460</x>
       <y>270</y>
       <width>171</width>
       <height>31</height>
@@ -83,7 +83,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>440</x>
+      <x>460</x>
       <y>320</y>
       <width>171</width>
       <height>31</height>

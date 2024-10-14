@@ -1,5 +1,6 @@
 import os
 from PyQt6 import QtCore, QtGui, QtWidgets
+from Preference_Admin_Menu import Ui_MainWindow as AdminMenuWindow  # Preference_Admin_Menu sınıfını içe aktarıyoruz
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -16,7 +17,6 @@ class Ui_MainWindow(object):
 
         # Dinamik yol ile resim ekleme
         image_path = os.path.join(os.path.dirname(__file__), 'images', 'login.jpg')
-        print(f"Background image path: {image_path}")
         
         # Resmi QLabel'a ekle
         pixmap = QtGui.QPixmap(image_path)
@@ -57,6 +57,9 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
+        # Login butonuna tıklama olayı
+        self.pushButton.clicked.connect(self.open_admin_menu)
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
@@ -65,3 +68,9 @@ class Ui_MainWindow(object):
         self.Password.setPlaceholderText(_translate("MainWindow", "Password"))
         self.pushButton.setText(_translate("MainWindow", "LOGIN"))
 
+    def open_admin_menu(self):
+        # Admin menüyü açmak için
+        self.window = QtWidgets.QMainWindow()  # Yeni bir QMainWindow oluşturuluyor
+        self.ui = AdminMenuWindow()  # Preference_Admin_Menu dosyasındaki Ui_MainWindow sınıfı kullanılıyor
+        self.ui.setupUi(self.window)  # Arayüz setup ediliyor
+        self.window.show()  # Yeni pencere gösteriliyor

@@ -1,6 +1,7 @@
 <RCC>
   <qresource prefix="images">
-    <file>Ersin/login.jpg</file>
+    <file>Ersin/images/admin.jpg</file>
+    <file>Ersin/images/login.jpg</file>
   </qresource>
   <qresource prefix="icons"/>
 </RCC>
