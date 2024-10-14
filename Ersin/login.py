@@ -24,6 +24,7 @@ class Ui_MainWindow(object):
         self.background_label.setScaledContents(True)  # Resmin QLabel boyutlarına göre ölçeklenmesi
         self.background_label.lower()  # Resmi arka plana yerleştir
         
+        
         # CRM Project başlığı
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(250, 120, 291, 61))
