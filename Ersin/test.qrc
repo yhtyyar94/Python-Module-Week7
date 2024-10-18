@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="test">
-    <file>beyaz.jpg</file>
-    <file>zemin-kucuk (1).jpg</file>
-    <file>zemin-kucuk.jpg</file>
-    <file>zemin-buyuk.jpg</file>
-  </qresource>
-</RCC>
