@@ -1,12 +1,12 @@
 import sys
 from PyQt6 import QtWidgets
 
-from check_assets import check_assets
+from check_assets import check_asset_path
 from login import Ui_MainWindow as Login_Menu
 
 
 if __name__ == "__main__":
-    check_assets()
+    check_asset_path()
 
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()

@@ -1,7 +1,8 @@
 import os
 
 
-def check_assets():
+# each python file has background image and its path starts with :/assets/ chane it to ./
+def check_asset_path():
     for root, dirs, files in os.walk("."):
         for file in files:
             if file.endswith(".py"):
@@ -9,4 +10,6 @@ def check_assets():
                     lines = f.readlines()
                 with open(os.path.join(root, file), "w") as f:
                     for line in lines:
-                        f.write(line.replace(":/assets", "."))
+                        if ":/assets/" in line:
+                            line = line.replace(":/assets/", "./")
+                        f.write(line)
