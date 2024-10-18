@@ -60,7 +60,7 @@ font-weight:400;
 background:none</string>
     </property>
     <property name="text">
-     <string>Username</string>
+     <string>Kullanıcı Adı</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
@@ -84,7 +84,7 @@ padding:5px
      <string/>
     </property>
     <property name="placeholderText">
-     <string>Enter your username</string>
+     <string>Kullanıcı adınızı giriniz...</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_2">
@@ -111,7 +111,7 @@ padding:5px
      <enum>QLineEdit::EchoMode::Password</enum>
     </property>
     <property name="placeholderText">
-     <string>Enter your password</string>
+     <string>Şifrenizi giriniz...</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -130,7 +130,7 @@ font-weight:400;
 background:none</string>
     </property>
     <property name="text">
-     <string>Password</string>
+     <string>Şifre</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
@@ -158,7 +158,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Login</string>
+     <string>Giriş</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -186,7 +186,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Exit</string>
+     <string>Çıkış</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">

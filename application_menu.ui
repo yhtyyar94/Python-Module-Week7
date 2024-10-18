@@ -43,15 +43,15 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Search</string>
+     <string>Ara</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>280</x>
       <y>70</y>
-      <width>271</width>
+      <width>241</width>
       <height>41</height>
      </rect>
     </property>
@@ -62,7 +62,7 @@ font-weight:bold;
 background:none</string>
     </property>
     <property name="text">
-     <string>APPLICATIONS</string>
+     <string>BAŞVURULAR</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
@@ -82,7 +82,7 @@ padding:5px
 }</string>
     </property>
     <property name="placeholderText">
-     <string>Enter your search term...</string>
+     <string>Aramak istdiğiniz kelimeyi girin...</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -109,7 +109,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Assigned Mentor Meetings</string>
+     <string>Tanımlanan Mentör Görüşmeleri</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_3">
@@ -136,7 +136,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Unassigned Mentor Meetins</string>
+     <string>Tanımlanmayan Mentör Görüşmeleri</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_4">
@@ -163,7 +163,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Previous VIT Control</string>
+     <string>Önceki VIT Kontrol</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_5">
@@ -190,7 +190,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Application Filtered</string>
+     <string>Başvuru Filtireli</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_6">
@@ -217,7 +217,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Duplicate Registration</string>
+     <string>Mükerrer kayıt</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_7">
@@ -244,7 +244,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Different Registration</string>
+     <string>Faklı Kayıt</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_8">
@@ -271,7 +271,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>All Aplications</string>
+     <string>Tüm Başvurular</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_9">
@@ -298,7 +298,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Preferences</string>
+     <string>Tercihler</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_10">
@@ -326,7 +326,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Exit</string>
+     <string>Çıkış</string>
     </property>
    </widget>
    <widget class="QTableWidget" name="tableWidget">
@@ -341,7 +341,8 @@ font-weight:bold
     <property name="styleSheet">
      <string notr="true">background:white;
 border-radius:10px;
-padding:5px</string>
+padding:5px;
+color:black</string>
     </property>
     <property name="tabKeyNavigation">
      <bool>true</bool>
@@ -372,7 +373,7 @@ padding:5px</string>
     </attribute>
     <column>
      <property name="text">
-      <string>Date</string>
+      <string>Tarih</string>
      </property>
      <property name="textAlignment">
       <set>AlignLeading|AlignVCenter</set>
@@ -380,7 +381,7 @@ padding:5px</string>
     </column>
     <column>
      <property name="text">
-      <string>Name</string>
+      <string>Isim Soyisim</string>
      </property>
      <property name="textAlignment">
       <set>AlignLeading|AlignVCenter</set>
@@ -396,7 +397,7 @@ padding:5px</string>
     </column>
     <column>
      <property name="text">
-      <string>Phone</string>
+      <string>Telefon</string>
      </property>
      <property name="textAlignment">
       <set>AlignLeading|AlignVCenter</set>
@@ -404,7 +405,7 @@ padding:5px</string>
     </column>
     <column>
      <property name="text">
-      <string>Postcode</string>
+      <string>Posta Kodu</string>
      </property>
      <property name="textAlignment">
       <set>AlignLeading|AlignVCenter</set>
@@ -412,7 +413,7 @@ padding:5px</string>
     </column>
     <column>
      <property name="text">
-      <string>Province</string>
+      <string>Eyalet</string>
      </property>
      <property name="textAlignment">
       <set>AlignLeading|AlignVCenter</set>
@@ -420,7 +421,7 @@ padding:5px</string>
     </column>
     <column>
      <property name="text">
-      <string>Current Sit</string>
+      <string>Mevcut Durum</string>
      </property>
      <property name="textAlignment">
       <set>AlignLeading|AlignVCenter</set>
@@ -428,7 +429,7 @@ padding:5px</string>
     </column>
     <column>
      <property name="text">
-      <string>Economic Sit</string>
+      <string>Ekonomik Durum</string>
      </property>
      <property name="textAlignment">
       <set>AlignLeading|AlignVCenter</set>
