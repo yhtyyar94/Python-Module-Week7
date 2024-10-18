@@ -1,6 +1,6 @@
 import os
 from PyQt6 import QtCore, QtGui, QtWidgets
-from Preference_Admin_Menu import Ui_MainWindow as AdminMenuWindow  # Preference_Admin_Menu sınıfını içe aktarıyoruz
+from Preference_Admin_Menu import Ui_MainWindow as AdminMenuWindow
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
         self.background_label.setPixmap(pixmap)
         self.background_label.setScaledContents(True)  # Resmin QLabel boyutlarına göre ölçeklenmesi
         self.background_label.lower()  # Resmi arka plana yerleştir
-        
+
         
         # CRM Project başlığı
         self.label = QtWidgets.QLabel(parent=self.centralwidget)

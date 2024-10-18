@@ -1,7 +1,12 @@
 <RCC>
   <qresource prefix="images">
+    <file>zemin-kucuk.jpg</file>
+    <file>zemin-buyuk.jpg</file>
     <file>Ersin/images/admin.jpg</file>
     <file>Ersin/images/login.jpg</file>
+  </qresource>
+  <qresource prefix="testx">
+    <file>../../../../../Users/Windows 10/Downloads/zemin-kucuk.jpg</file>
   </qresource>
   <qresource prefix="icons"/>
 </RCC>
