@@ -144,7 +144,7 @@ height:600px;
     <property name="styleSheet">
      <string notr="true">QFrame
 {
-	background-image: url(:/images/images/zemin-buyuk.jpg);
+	background-image: url(:/images/images/zemin_buyuk.jpg);
 }</string>
     </property>
     <property name="frameShape">
@@ -406,7 +406,7 @@ font-weight:bold
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="test.qrc"/>
+  <include location="dene.qrc"/>
  </resources>
  <connections/>
 </ui>

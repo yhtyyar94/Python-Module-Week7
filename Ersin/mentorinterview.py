@@ -1,63 +1,70 @@
-
 from PyQt6 import QtCore, QtGui, QtWidgets
-from preference_adminmenu import Ui_MainWindow as AdminMenuWindow  # Admin menu arayüzünü dahil et
+import os
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 600)
-
-        # Merkez widget oluştur
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+
+        # Arka plan için QLabel kullanarak resmi yükle
+        self.background_label = QtWidgets.QLabel(parent=self.centralwidget)
+        self.background_label.setGeometry(QtCore.QRect(0, 0, 800, 600))
+        
+        # Resmin tam yolunu almak için os.path kullanıyoruz
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+        image_path = os.path.join(current_dir, 'images/zemin_buyuk.jpg')  # Dosya yolunu kendi dizinine göre ayarlayın
+        
+        # QPixmap kullanarak resmi QLabel'e yerleştiriyoruz
+        pixmap = QtGui.QPixmap(image_path)
+        if not pixmap.isNull():
+            self.background_label.setPixmap(pixmap)
+            self.background_label.setScaledContents(True)
+        else:
+            print(f"Resim yüklenemedi: {image_path}")
+        
         self.frame = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(750, 340, 800, 600))
         self.frame.setStyleSheet("QFrame{\n"
-"background-image: url(:/images/zemin-kucuk.jpg);\n"
-"width:800px;\n"
-"height:600px;\n"
+"background-color: rgba(255, 255, 255, 0);\n"
 "}")
         self.frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame.setObjectName("frame")
+
         self.Basvurular = QtWidgets.QPushButton(parent=self.frame)
         self.Basvurular.setGeometry(QtCore.QRect(80, 350, 141, 31))
         self.Basvurular.setAutoFillBackground(False)
-        self.Basvurular.setStyleSheet(
-            "background-color:#05a90c; font-size:12pt; color:white"
-        )
+        self.Basvurular.setStyleSheet("background-color:#05a90c; font-size:12pt; color:white")
         self.Basvurular.setObjectName("Basvurular")
-        self.Basvurular.setText("BAŞVURULAR")
 
-        self.Mentor = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.Mentor = QtWidgets.QPushButton(parent=self.frame)
         self.Mentor.setGeometry(QtCore.QRect(560, 350, 181, 31))
         self.Mentor.setAutoFillBackground(False)
-        self.Mentor.setStyleSheet(
-            "background-color:#4d0094; font-size:12pt; color:white"
-        )
+        self.Mentor.setStyleSheet("background-color:#4d0094; font-size:12pt; color:white")
         self.Mentor.setObjectName("Mentor")
+
         self.pushButton = QtWidgets.QPushButton(parent=self.frame)
         self.pushButton.setGeometry(QtCore.QRect(700, 540, 91, 31))
         self.pushButton.setAutoFillBackground(False)
         self.pushButton.setStyleSheet("background-color:#800000; font-size:12pt; color:white")
         self.pushButton.setObjectName("pushButton")
+
         self.Adminmenu = QtWidgets.QPushButton(parent=self.frame)
         self.Adminmenu.setGeometry(QtCore.QRect(440, 280, 141, 31))
         self.Adminmenu.setAutoFillBackground(False)
         self.Adminmenu.setStyleSheet("background-color:#7d003b; font-size:12pt; color:white")
         self.Adminmenu.setObjectName("Adminmenu")
+
         self.Anamenu = QtWidgets.QPushButton(parent=self.frame)
         self.Anamenu.setGeometry(QtCore.QRect(190, 280, 141, 31))
         self.Anamenu.setAutoFillBackground(False)
         self.Anamenu.setStyleSheet("background-color:#363636; font-size:12pt; color:white")
         self.Anamenu.setObjectName("Anamenu")
-        self.frame_2 = QtWidgets.QFrame(parent=self.centralwidget)
-        self.frame_2.setGeometry(QtCore.QRect(0, 0, 800, 600))
-        self.frame_2.setStyleSheet("background-image: url(:/test/zemin-buyuk.jpg);")
-        self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_2.setObjectName("frame_2")
-        self.label = QtWidgets.QLabel(parent=self.frame_2)
+
+        # Diğer bileşenler
+        self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(260, 70, 311, 31))
         self.label.setStyleSheet("QLabel{\n"
 "color:white;\n"
@@ -67,7 +74,8 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.label.setObjectName("label")
-        self.widget = QtWidgets.QWidget(parent=self.frame_2)
+
+        self.widget = QtWidgets.QWidget(parent=self.centralwidget)
         self.widget.setGeometry(QtCore.QRect(0, 120, 800, 41))
         self.widget.setStyleSheet("QWidget{\n"
 "color:black;\n"
@@ -76,6 +84,7 @@ class Ui_MainWindow(object):
 "font-weight:bold;\n"
 "}")
         self.widget.setObjectName("widget")
+
         self.pushButton_2 = QtWidgets.QPushButton(parent=self.widget)
         self.pushButton_2.setGeometry(QtCore.QRect(260, 10, 75, 24))
         self.pushButton_2.setStyleSheet("QPushButton{\n"
@@ -91,6 +100,7 @@ class Ui_MainWindow(object):
 "font-weight:bold\n"
 "}")
         self.pushButton_2.setObjectName("pushButton_2")
+
         self.lineEdit = QtWidgets.QLineEdit(parent=self.widget)
         self.lineEdit.setGeometry(QtCore.QRect(10, 10, 241, 22))
         self.lineEdit.setStyleSheet("QLineEdit{\n"
@@ -99,9 +109,8 @@ class Ui_MainWindow(object):
 "font-weight:bold;\n"
 "}")
         self.lineEdit.setObjectName("lineEdit")
-        self.lineEdit.setPlaceholderText("ARANACAK METNİ GİRİNİZ")
 
-        self.pushButton_3 = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.pushButton_3 = QtWidgets.QPushButton(parent=self.widget)
         self.pushButton_3.setGeometry(QtCore.QRect(560, 10, 201, 24))
         self.pushButton_3.setStyleSheet("QPushButton{\n"
 "color:black;\n"
@@ -116,7 +125,6 @@ class Ui_MainWindow(object):
 "font-weight:bold\n"
 "}")
         self.pushButton_3.setObjectName("pushButton_3")
-        self.pushButton_3.setText("TÜM GÖRÜŞMELER")
 
         self.comboBox = QtWidgets.QComboBox(parent=self.centralwidget)
         self.comboBox.setGeometry(QtCore.QRect(510, 170, 281, 22))
@@ -126,16 +134,14 @@ class Ui_MainWindow(object):
 "font-weight:bold;\n"
 "}")
         self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItems([
-            "Vıt Projesinin Tamamına Katılması Uygun Olur",
-            "VIT Projesi ilk IT Eğtimi Al... ya Yönlendirilmesi Uygun Olur",
-            "VIT Projesi İngilizce Eğtimi Al... ya Yönlendirilmesi Uygun Olur",
-            "Vit Pojesi Kapsamında Dir.. Yönlendirilmesi Uygun Olur",
-            "Direkt Bireysel Koçluk İle İşe Yönlendirilmesi Uygun Olur",
-            "Bir Sonraki VIT Projesine Katılması Daha Uygun Olur",
-            "Başka Bir Sektöre Yönlendirilmesi",
-            "Diğer"
-        ])
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
 
         self.tableView = QtWidgets.QTableView(parent=self.centralwidget)
         self.tableView.setGeometry(QtCore.QRect(0, 200, 800, 341))
@@ -161,7 +167,6 @@ class Ui_MainWindow(object):
 "font-weight:bold\n"
 "}")
         self.pushButton_4.setObjectName("pushButton_4")
-        self.pushButton_4.setText("KAPAT")
 
         self.pushButton_5 = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButton_5.setGeometry(QtCore.QRect(10, 170, 91, 24))
@@ -178,16 +183,8 @@ class Ui_MainWindow(object):
 "font-weight:bold\n"
 "}")
         self.pushButton_5.setObjectName("pushButton_5")
-        self.pushButton_5.setText("TERCİHLER")
-
-        # Giriş butonuna tıklama olayı
-        self.pushButton.clicked.connect(self.open_admin_menu)
 
         MainWindow.setCentralWidget(self.centralwidget)
-        self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 22))
-        self.menubar.setObjectName("menubar")
-        MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -221,7 +218,6 @@ class Ui_MainWindow(object):
 
 if __name__ == "__main__":
     import sys
-
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
