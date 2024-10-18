@@ -1,6 +1,6 @@
 import os
 from PyQt6 import QtCore, QtGui, QtWidgets
-from Preference_Admin_Menu import Ui_MainWindow as AdminMenuWindow
+from preference_admin_menu import Ui_MainWindow as AdminMenuWindow
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -24,7 +24,6 @@ class Ui_MainWindow(object):
         self.background_label.setScaledContents(True)  # Resmin QLabel boyutlarına göre ölçeklenmesi
         self.background_label.lower()  # Resmi arka plana yerleştir
 
-        
         # CRM Project başlığı
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(250, 120, 291, 61))
@@ -72,6 +71,15 @@ class Ui_MainWindow(object):
     def open_admin_menu(self):
         # Admin menüyü açmak için
         self.window = QtWidgets.QMainWindow()  # Yeni bir QMainWindow oluşturuluyor
-        self.ui = AdminMenuWindow()  # Preference_Admin_Menu dosyasındaki Ui_MainWindow sınıfı kullanılıyor
+        self.ui = AdminMenuWindow()  # preference_admin_menu dosyasındaki Ui_MainWindow sınıfı kullanılıyor
         self.ui.setupUi(self.window)  # Arayüz setup ediliyor
         self.window.show()  # Yeni pencere gösteriliyor
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec())

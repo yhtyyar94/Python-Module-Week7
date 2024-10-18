@@ -11,7 +11,7 @@ class Ui_MainWindow(object):
         self.frame = QtWidgets.QFrame(parent=self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(750, 340, 800, 600))
         self.frame.setStyleSheet("QFrame{\n"
-"background-image: url(:/testx/Users/Windows 10/Downloads/zemin-kucuk.jpg);\n"
+"background-image: url(:/images/zemin-kucuk.jpg);\n"
 "width:800px;\n"
 "height:600px;\n"
 "}")
