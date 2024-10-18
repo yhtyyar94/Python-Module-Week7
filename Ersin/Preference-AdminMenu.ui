@@ -58,7 +58,7 @@ font-weight:bold
     </property>
     <property name="styleSheet">
      <string notr="true">QFrame{
-background-image: url(:/testx/Users/Windows 10/Downloads/zemin-kucuk.jpg);
+	background-image: url(:/dene/Ersin/images/zemin-kucuk.jpg);
 width:800px;
 height:600px;
 }</string>
@@ -226,7 +226,7 @@ font-weight:bold
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="../qrmc.qrc"/>
+  <include location="../dene.qrc"/>
  </resources>
  <connections/>
 </ui>

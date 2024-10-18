@@ -142,7 +142,10 @@ height:600px;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-image: url(:/test/zemin-buyuk.jpg);</string>
+     <string notr="true">QFrame
+{
+	background-image: url(:/images/images/zemin-buyuk.jpg);
+}</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>

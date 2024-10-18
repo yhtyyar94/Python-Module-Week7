@@ -1,6 +1,6 @@
 import os
 from PyQt6 import QtCore, QtGui, QtWidgets
-from preference_admin_menu import Ui_MainWindow as AdminMenuWindow
+from preference_adminmenu import Ui_MainWindow as AdminMenuWindow
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
