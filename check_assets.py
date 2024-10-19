@@ -2,7 +2,7 @@ import os
 
 
 # each python file has background image and its path starts with :/assets/ chane it to ./
-def check_asset_path():
+def check_asset_path_and_fix_size():
     for root, dirs, files in os.walk("."):
         for file in files:
             if file.endswith(".py"):
@@ -15,4 +15,8 @@ def check_asset_path():
                     for line in lines:
                         if ":/assets/" in line:
                             line = line.replace(":/assets/", "./")
+                        if "MainWindow.resize" in line:
+                            line = line.replace(
+                                "MainWindow.resize", "MainWindow.setFixedSize"
+                            )
                         f.write(line)

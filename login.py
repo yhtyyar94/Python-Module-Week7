@@ -13,7 +13,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(800, 600)
+        MainWindow.setFixedSize(800, 600)
         MainWindow.setStyleSheet("background-image: url(./assets/login.jpg);\n"
 "QWidget::setFixedSize(800, 600);\n"
 "\n"
