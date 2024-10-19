@@ -18,7 +18,7 @@
 background-image: url(:/assets/assets/zemin-buyuk.jpg);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="Basvurular_2">
+   <widget class="QPushButton" name="mulakatlar">
     <property name="geometry">
      <rect>
       <x>320</x>
@@ -48,7 +48,7 @@ font-weight:bold
      <string>MÜLAKATLAR</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Mentor">
+   <widget class="QPushButton" name="mentor_gorusmesi">
     <property name="geometry">
      <rect>
       <x>520</x>
@@ -78,67 +78,7 @@ font-weight:bold
      <string>MENTÖR GÖRÜŞMESİ</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="Adminmenu">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>280</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-color:black;
-background:white;
-border-radius:10px;
-font-weight:bold;
-}
-QPushButton::hover{
-color:white;
-background:#47545a;
-border-radius:10px;
-font-weight:bold
-}</string>
-    </property>
-    <property name="text">
-     <string>ADMIN MENÜ</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Anamenu">
-    <property name="geometry">
-     <rect>
-      <x>220</x>
-      <y>280</y>
-      <width>141</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-color:black;
-background:white;
-border-radius:10px;
-font-weight:bold;
-}
-QPushButton::hover{
-color:white;
-background:#47545a;
-border-radius:10px;
-font-weight:bold
-}</string>
-    </property>
-    <property name="text">
-     <string>ANA MENÜ</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="Basvurular">
+   <widget class="QPushButton" name="basvurular">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -168,7 +108,7 @@ font-weight:bold
      <string>BAŞVURULAR</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="cikis">
     <property name="geometry">
      <rect>
       <x>610</x>
@@ -202,9 +142,9 @@ font-weight:bold
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>250</x>
       <y>70</y>
-      <width>451</width>
+      <width>321</width>
       <height>41</height>
      </rect>
     </property>
@@ -215,7 +155,7 @@ font-weight:bold;
 background:none</string>
     </property>
     <property name="text">
-     <string>ADMIN TERCİHLER MENU</string>
+     <string>TERCİHLER MENU</string>
     </property>
    </widget>
   </widget>

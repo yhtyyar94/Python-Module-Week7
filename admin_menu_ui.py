@@ -12,9 +12,9 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.setFixedSize(800, 600)
+        MainWindow.resize(800, 600)
         MainWindow.setStyleSheet("padding:0;\n"
-"background-image: url(./assets/zemin-buyuk.jpg);")
+"background-image: url(:/assets/assets/zemin-buyuk.jpg);")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.Basvurular_2 = QtWidgets.QPushButton(parent=self.centralwidget)
@@ -114,6 +114,13 @@ class Ui_MainWindow(object):
 "font-weight:bold\n"
 "}")
         self.pushButton.setObjectName("pushButton")
+        self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(190, 70, 451, 41))
+        self.label_2.setStyleSheet("color:white;\n"
+"font-size:36px;\n"
+"font-weight:bold;\n"
+"background:none")
+        self.label_2.setObjectName("label_2")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -128,3 +135,4 @@ class Ui_MainWindow(object):
         self.Anamenu.setText(_translate("MainWindow", "ANA MENÜ"))
         self.Basvurular.setText(_translate("MainWindow", "BAŞVURULAR"))
         self.pushButton.setText(_translate("MainWindow", "KAPAT"))
+        self.label_2.setText(_translate("MainWindow", "ADMIN TERCİHLER MENU"))

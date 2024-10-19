@@ -22,10 +22,9 @@ if __name__ == "__main__":
 
     def admin_setup():
         admin_menu.setupUi(MainWindow)
-        admin_menu.Basvurular.clicked.connect(lambda: applications_setup())
-
-        admin_menu.Mentor.clicked.connect(lambda: mentor_setup())
-        admin_menu.Basvurular_2.clicked.connect(lambda: interviews_menu_setup())
+        admin_menu.Basvurular.clicked.connect(applications_setup)
+        admin_menu.Mentor.clicked.connect(mentor_setup)
+        admin_menu.Basvurular_2.clicked.connect(interviews_menu_setup)
         admin_menu.pushButton.clicked.connect(MainWindow.close)
 
     def applications_setup():
