@@ -1,17 +1,14 @@
-#from check_assets import check_asset_path_and_fix_size
-
-
 if __name__ == "__main__":
    # check_asset_path_and_fix_size()
     import sys
     from PyQt6 import QtWidgets
-    from login_ui import Ui_MainWindow as LoginUI
-    from admin_menu_ui import Ui_MainWindow as AdminUI
-    from application_menu_ui import Ui_MainWindow as ApplicationsUI
-    from mentor_menu_ui import Ui_MainWindow as MentorUI
-    from interviews_menu_ui import Ui_MainWindow as InterviewsUI
-    from user_menu_ui import Ui_MainWindow as UserUI
-    from admin_control_menu_ui import Ui_MainWindow as AdminControlUI
+    from login import Ui_MainWindow as LoginUI
+    from admin_menu import Ui_MainWindow as AdminUI
+    from application_menu import Ui_MainWindow as ApplicationsUI
+    from mentor_menu import Ui_MainWindow as MentorUI
+    from interviews_menu import Ui_MainWindow as InterviewsUI
+    from user_menu import Ui_MainWindow as UserUI
+    from admin_control_menu import Ui_MainWindow as AdminControlUI
 
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
