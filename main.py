@@ -11,6 +11,7 @@ if __name__ == "__main__":
     from mentor_menu_ui import Ui_MainWindow as MentorUI
     from interviews_menu_ui import Ui_MainWindow as InterviewsUI
     from user_menu_ui import Ui_MainWindow as UserUI
+    from admin_control_menu_ui import Ui_MainWindow as AdminControlUI
 
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
@@ -21,12 +22,14 @@ if __name__ == "__main__":
     mentor_menu = MentorUI()
     interviews_menu = InterviewsUI()
     user_menu = UserUI()
+    admin_control_menu = AdminControlUI()
 
     def admin_setup():
         admin_menu.setupUi(MainWindow)
         admin_menu.Basvurular.clicked.connect(applications_setup)
         admin_menu.Mentor.clicked.connect(mentor_setup)
         admin_menu.Basvurular_2.clicked.connect(interviews_menu_setup)
+        admin_menu.Adminmenu.clicked.connect(setup_admin_control_menu)
         admin_menu.pushButton.clicked.connect(MainWindow.close)
 
     def applications_setup():
@@ -50,6 +53,11 @@ if __name__ == "__main__":
         user_menu.mentor_gorusmesi.clicked.connect(mentor_setup)
         user_menu.mulakatlar.clicked.connect(interviews_menu_setup)
         user_menu.cikis.clicked.connect(MainWindow.close)
+
+    def setup_admin_control_menu():
+        admin_control_menu.setupUi(MainWindow)
+        admin_control_menu.tercihler.clicked.connect(admin_setup)
+        admin_control_menu.cikis.clicked.connect(MainWindow.close)
 
     ui.pushButton.clicked.connect(admin_setup)
 
