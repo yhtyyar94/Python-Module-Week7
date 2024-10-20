@@ -208,6 +208,29 @@ background:none</string>
      <string>VIT 5</string>
     </property>
    </widget>
+   <widget class="QLabel" name="error_message">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>540</y>
+      <width>401</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:none;
+color:red;
+font-size:20px;
+font-weight: bold;
+font-style:italic;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources>

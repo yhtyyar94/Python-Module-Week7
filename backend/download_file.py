@@ -1,7 +1,7 @@
-from auth import authenticate
 from googleapiclient.discovery import build
 from googleapiclient.http import MediaIoBaseDownload
 import io
+from backend.auth import authenticate
 
 
 def download_file(file_id):

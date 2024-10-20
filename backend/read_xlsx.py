@@ -18,4 +18,5 @@ def read_xlsx(file_name):
         if all(cell is None for cell in row):
             continue
         rows.append(row)
+    rows = [list(row) for row in rows]
     return rows

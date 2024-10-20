@@ -1,4 +1,4 @@
-from auth import authenticate
+from backend.auth import authenticate
 from googleapiclient.discovery import build
 
 
