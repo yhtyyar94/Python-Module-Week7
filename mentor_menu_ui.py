@@ -16,15 +16,17 @@ class Ui_MainWindow(object):
         MainWindow.setStyleSheet("background-image: url(:/assets/assets/zemin-buyuk.jpg);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.tableView = QtWidgets.QTableView(self.centralwidget)
-        self.tableView.setGeometry(QtCore.QRect(10, 240, 771, 341))
-        self.tableView.setStyleSheet("QTableView{\n"
+        self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
+        self.tableWidget.setGeometry(QtCore.QRect(10, 240, 771, 341))
+        self.tableWidget.setStyleSheet("QTableView{\n"
 "color:black;\n"
 "background:white;\n"
 "font-weight:bold;\n"
 "border-radius:5px\n"
 "}")
-        self.tableView.setObjectName("tableView")
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(0)
+        self.tableWidget.setRowCount(0)
         self.comboBox = QtWidgets.QComboBox(self.centralwidget)
         self.comboBox.setGeometry(QtCore.QRect(340, 190, 441, 31))
         self.comboBox.setStyleSheet("QComboBox{\n"

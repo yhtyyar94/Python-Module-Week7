@@ -186,10 +186,12 @@ class Ui_MainWindow(object):
         self.pushButton_10.setObjectName("pushButton_10")
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
         self.tableWidget.setGeometry(QtCore.QRect(20, 270, 761, 321))
-        self.tableWidget.setStyleSheet("background:white;\n"
-"border-radius:10px;\n"
-"padding:5px;\n"
-"color:black")
+        self.tableWidget.setStyleSheet("QTableView{\n"
+"color:black;\n"
+"background:white;\n"
+"font-weight:bold;\n"
+"border-radius:5px\n"
+"}")
         self.tableWidget.setTabKeyNavigation(True)
         self.tableWidget.setDragEnabled(True)
         self.tableWidget.setRowCount(0)
