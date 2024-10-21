@@ -24,9 +24,9 @@ class Ui_MainWindow(object):
 "font-weight:bold;\n"
 "background:none")
         self.label.setObjectName("label")
-        self.etkinlik_kontrol = QtWidgets.QPushButton(self.centralwidget)
-        self.etkinlik_kontrol.setGeometry(QtCore.QRect(20, 170, 161, 41))
-        self.etkinlik_kontrol.setStyleSheet("QPushButton{\n"
+        self.activity_check = QtWidgets.QPushButton(self.centralwidget)
+        self.activity_check.setGeometry(QtCore.QRect(20, 170, 161, 41))
+        self.activity_check.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -38,10 +38,10 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.etkinlik_kontrol.setObjectName("etkinlik_kontrol")
-        self.cikis = QtWidgets.QPushButton(self.centralwidget)
-        self.cikis.setGeometry(QtCore.QRect(20, 410, 161, 41))
-        self.cikis.setStyleSheet("QPushButton{\n"
+        self.activity_check.setObjectName("activity_check")
+        self.exit = QtWidgets.QPushButton(self.centralwidget)
+        self.exit.setGeometry(QtCore.QRect(20, 410, 161, 41))
+        self.exit.setStyleSheet("QPushButton{\n"
 "color:white;\n"
 "background:#47545a;\n"
 "border-radius:10px;\n"
@@ -54,7 +54,7 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.cikis.setObjectName("cikis")
+        self.exit.setObjectName("exit")
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
         self.tableWidget.setGeometry(QtCore.QRect(200, 170, 581, 411))
         self.tableWidget.setStyleSheet("QTableView{\n"
@@ -101,9 +101,9 @@ class Ui_MainWindow(object):
         self.tableWidget.horizontalHeader().setMinimumSectionSize(19)
         self.tableWidget.verticalHeader().setDefaultSectionSize(35)
         self.tableWidget.verticalHeader().setMinimumSectionSize(21)
-        self.mail_gonder = QtWidgets.QPushButton(self.centralwidget)
-        self.mail_gonder.setGeometry(QtCore.QRect(20, 250, 161, 41))
-        self.mail_gonder.setStyleSheet("QPushButton{\n"
+        self.send_email = QtWidgets.QPushButton(self.centralwidget)
+        self.send_email.setGeometry(QtCore.QRect(20, 250, 161, 41))
+        self.send_email.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -115,10 +115,10 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.mail_gonder.setObjectName("mail_gonder")
-        self.tercihler = QtWidgets.QPushButton(self.centralwidget)
-        self.tercihler.setGeometry(QtCore.QRect(20, 330, 161, 41))
-        self.tercihler.setStyleSheet("QPushButton{\n"
+        self.send_email.setObjectName("send_email")
+        self.main_menu = QtWidgets.QPushButton(self.centralwidget)
+        self.main_menu.setGeometry(QtCore.QRect(20, 330, 161, 41))
+        self.main_menu.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -130,7 +130,7 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.tercihler.setObjectName("tercihler")
+        self.main_menu.setObjectName("main_menu")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -140,8 +140,8 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "ADMIN MENU"))
-        self.etkinlik_kontrol.setText(_translate("MainWindow", "Etkinlik Kontrol"))
-        self.cikis.setText(_translate("MainWindow", "Çıkış"))
+        self.activity_check.setText(_translate("MainWindow", "Activity Check"))
+        self.exit.setText(_translate("MainWindow", "Exit"))
         self.tableWidget.setSortingEnabled(True)
         item = self.tableWidget.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Etkinlik Adı"))
@@ -151,5 +151,5 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Katılımcı Email"))
         item = self.tableWidget.horizontalHeaderItem(3)
         item.setText(_translate("MainWindow", "Oranizatör Email"))
-        self.mail_gonder.setText(_translate("MainWindow", "Mail  Gönder"))
-        self.tercihler.setText(_translate("MainWindow", "Tercihler"))
+        self.send_email.setText(_translate("MainWindow", "Send Email"))
+        self.main_menu.setText(_translate("MainWindow", "Main Menu"))

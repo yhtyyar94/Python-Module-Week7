@@ -34,8 +34,8 @@ if __name__ == "__main__":
 
     def applications_setup():
         applications_menu.setupUi(MainWindow)
-        applications_menu.mainmenu_Button.clicked.connect(admin_setup)
-        applications_menu.exit_Button.clicked.connect(MainWindow.close)
+        applications_menu.main_menu.clicked.connect(admin_setup)
+        applications_menu.exit.clicked.connect(MainWindow.close)
 
     def mentor_setup():
         mentor_menu.setupUi(MainWindow)
@@ -56,8 +56,8 @@ if __name__ == "__main__":
 
     def setup_admin_control_menu():
         admin_control_menu.setupUi(MainWindow)
-        admin_control_menu.preferences.clicked.connect(admin_setup)
-        admin_control_menu.cikis.clicked.connect(MainWindow.close)
+        admin_control_menu.send_email.clicked.connect(admin_setup)
+        admin_control_menu.exit.clicked.connect(MainWindow.close)
 
     ui.pushButton.clicked.connect(admin_setup)
 

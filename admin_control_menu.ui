@@ -37,7 +37,7 @@ background:none</string>
      <string>ADMIN MENU</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="etkinlik_kontrol">
+   <widget class="QPushButton" name="activity_check">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -61,10 +61,10 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Etkinlik Kontrol</string>
+     <string>Activity Check</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="cikis">
+   <widget class="QPushButton" name="exit">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -89,7 +89,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Çıkış</string>
+     <string>Exit</string>
     </property>
    </widget>
    <widget class="QTableWidget" name="tableWidget">
@@ -193,7 +193,7 @@ border-radius:5px
      </property>
     </column>
    </widget>
-   <widget class="QPushButton" name="mail_gonder">
+   <widget class="QPushButton" name="send_email">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -217,10 +217,10 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Mail  Gönder</string>
+     <string>Send Email</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="tercihler">
+   <widget class="QPushButton" name="main_menu">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -244,7 +244,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Tercihler</string>
+     <string>Main Menu</string>
     </property>
    </widget>
   </widget>

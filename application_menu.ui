@@ -18,7 +18,7 @@
 QWidget::setFixedSize(800, 600);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="search">
     <property name="geometry">
      <rect>
       <x>680</x>
@@ -43,7 +43,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Ara</string>
+     <string>Search</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -62,7 +62,7 @@ font-weight:bold;
 background:none</string>
     </property>
     <property name="text">
-     <string>BAŞVURULAR</string>
+     <string>APPLICATIONS</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
@@ -82,10 +82,10 @@ padding:5px
 }</string>
     </property>
     <property name="placeholderText">
-     <string>Aramak istdiğiniz kelimeyi girin...</string>
+     <string>Enter your search term...</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="assigned_mentor_interviews">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -109,10 +109,10 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Tanımlanan Mentör Görüşmeleri</string>
+     <string>Assigned Mentor Interviews</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="unassigned_mentor_interviews">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -136,10 +136,10 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Tanımlanmayan Mentör Görüşmeleri</string>
+     <string>Unassigned Mentor Interviews</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="prev_vit_check">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -163,10 +163,10 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Önceki VIT Kontrol</string>
+     <string>Prev VIT Check</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="filtered_applications">
     <property name="geometry">
      <rect>
       <x>310</x>
@@ -190,10 +190,10 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Başvuru Filtireli</string>
+     <string>Filtered Application</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="duplicate_application">
     <property name="geometry">
      <rect>
       <x>470</x>
@@ -217,10 +217,10 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Mükerrer kayıt</string>
+     <string>Duplicate Application</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="different_registeration">
     <property name="geometry">
      <rect>
       <x>470</x>
@@ -244,10 +244,10 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Faklı Kayıt</string>
+     <string>Differrent Registration</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_8">
+   <widget class="QPushButton" name="all_applications">
     <property name="geometry">
      <rect>
       <x>20</x>
@@ -271,10 +271,10 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Tüm Başvurular</string>
+     <string>All Aplications</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_9">
+   <widget class="QPushButton" name="main_menu">
     <property name="geometry">
      <rect>
       <x>630</x>
@@ -298,10 +298,10 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Tercihler</string>
+     <string>Main Menu</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_10">
+   <widget class="QPushButton" name="exit">
     <property name="geometry">
      <rect>
       <x>630</x>
@@ -326,7 +326,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Çıkış</string>
+     <string>Exit</string>
     </property>
    </widget>
    <widget class="QTableWidget" name="tableWidget">
