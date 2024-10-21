@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '/Users/yhtyyarannayev/Documents/GitHub/Python-Module-Week7/English/login.ui'
+# Form implementation generated from reading ui file '/Users/yhtyyarannayev/Documents/GitHub/Python-Module-Week7/login.ui'
 #
 # Created by: PyQt6 UI code generator 6.2.2
 #
@@ -13,8 +13,8 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.setFixedSize(808, 600)
-        MainWindow.setStyleSheet("background-image: url(./assets/login.jpg);\n"
+        MainWindow.resize(800, 600)
+        MainWindow.setStyleSheet("background-image: url(:/assets/assets/login.jpg);\n"
 "QWidget::setFixedSize(800, 600);\n"
 "\n"
 "\n"
@@ -36,31 +36,27 @@ class Ui_MainWindow(object):
 "font-weight:400;\n"
 "background:none")
         self.label_2.setObjectName("label_2")
-
-        self.username_lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.username_lineEdit.setGeometry(QtCore.QRect(460, 290, 281, 31))
-        self.username_lineEdit.setStyleSheet("QLineEdit{\n"
+        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit.setGeometry(QtCore.QRect(460, 290, 281, 31))
+        self.lineEdit.setStyleSheet("QLineEdit{\n"
 "border-radius:10px;\n"
 "background:none;\n"
 "padding:5px\n"
 "}\n"
 "")
-        self.username_lineEdit.setText("")
-        self.username_lineEdit.setMaxLength(32766)
-        self.username_lineEdit.setObjectName("username_lineEdit")
-        self.password_lineEdit = QtWidgets.QLineEdit(self.centralwidget)
-        self.password_lineEdit.setGeometry(QtCore.QRect(460, 370, 281, 31))
-        self.password_lineEdit.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.SizeHorCursor))
-        self.password_lineEdit.setContextMenuPolicy(QtCore.Qt.ContextMenuPolicy.PreventContextMenu)
-        self.password_lineEdit.setStyleSheet("QLineEdit{\n"
+        self.lineEdit.setText("")
+        self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit_2.setGeometry(QtCore.QRect(460, 370, 281, 31))
+        self.lineEdit_2.setStyleSheet("QLineEdit{\n"
 "border-radius:10px;\n"
 "background:none;\n"
 "padding:5px\n"
 "}\n"
 "")
-        self.password_lineEdit.setText("")
-        self.password_lineEdit.setEchoMode(QtWidgets.QLineEdit.EchoMode.Normal)
-        self.password_lineEdit.setObjectName("password_lineEdit")
+        self.lineEdit_2.setText("")
+        self.lineEdit_2.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
+        self.lineEdit_2.setObjectName("lineEdit_2")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
         self.label_3.setGeometry(QtCore.QRect(460, 340, 101, 20))
         self.label_3.setStyleSheet("color:white;\n"
@@ -116,12 +112,10 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", " CRM V.2"))
-        self.label_2.setText(_translate("MainWindow", "Username"))
-        self.username_lineEdit.setToolTip(_translate("MainWindow", "<html><head/><body><p><br/></p></body></html>"))
-        self.username_lineEdit.setWhatsThis(_translate("MainWindow", "<html><head/><body><p>aieuaieua</p></body></html>"))
-        self.username_lineEdit.setPlaceholderText(_translate("MainWindow", "Enter your Username"))
-        self.password_lineEdit.setPlaceholderText(_translate("MainWindow", "Enter Your Password"))
-        self.label_3.setText(_translate("MainWindow", "Password"))
-        self.pushButton.setText(_translate("MainWindow", "Login"))
-        self.pushButton_2.setText(_translate("MainWindow", "Exit"))
+        self.label_2.setText(_translate("MainWindow", "Kullanıcı Adı"))
+        self.lineEdit.setPlaceholderText(_translate("MainWindow", "Kullanıcı adınızı giriniz..."))
+        self.lineEdit_2.setPlaceholderText(_translate("MainWindow", "Şifrenizi giriniz..."))
+        self.label_3.setText(_translate("MainWindow", "Şifre"))
+        self.pushButton.setText(_translate("MainWindow", "Giriş"))
+        self.pushButton_2.setText(_translate("MainWindow", "Çıkış"))
         self.label_4.setText(_translate("MainWindow", "VIT 5"))
