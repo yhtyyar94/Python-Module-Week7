@@ -13,10 +13,6 @@ if __name__ == "__main__":
     from user_menu_ui import Ui_MainWindow as UserUI
     from admin_control_menu_ui import Ui_MainWindow as AdminControlUI
 
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = LoginUI()
-    ui.setupUi(MainWindow)
     admin_menu = AdminUI()
     applications_menu = ApplicationsUI()
     mentor_menu = MentorUI()
@@ -59,7 +55,20 @@ if __name__ == "__main__":
         admin_control_menu.tercihler.clicked.connect(admin_setup)
         admin_control_menu.cikis.clicked.connect(MainWindow.close)
 
+    # Dit moeten we hebben om het evenement te behersen.
+    app = QtWidgets.QApplication(sys.argv)
+    # Dat vormt hoofdvenster.De users zien dit als interface.
+    MainWindow = QtWidgets.QMainWindow()
+
+    ui = LoginUI()
+    # Na "app en Mainwindow" gevormd is,worden widgets en interface-elementen (met setupUI) binnen dit venster geplaatst.
+    ui.setupUi(MainWindow)
     ui.pushButton.clicked.connect(admin_setup)
 
     MainWindow.show()
+    # app.exec(), start het "event loop",deze loop wacht tot een event onderandere; muiskliken, toesenbordsinvoer etc. en reageert erop.En returnt een getal,
+    # sys.exit, dit zorgt ervoor dat system correct beeindigd. gald verloopt.
     sys.exit(app.exec())
+
+
+# Opmerkingen :  admin_control_menu.tercihler.clicked.connect(admin_setup) ,  I.P. V "admin_setup" kun je ook lambda : admin_setup(param) gebruiken als je het met een prameter bijvoegen wilt.
