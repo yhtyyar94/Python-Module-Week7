@@ -12,8 +12,8 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.setFixedSize(800, 600)
-        MainWindow.setStyleSheet("background-image: url(./assets/zemin-buyuk.jpg);\n"
+        MainWindow.resize(800, 600)
+        MainWindow.setStyleSheet("background-image: url(:/assets/assets/zemin-buyuk.jpg);\n"
 "QWidget::setFixedSize(800, 600);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -57,10 +57,12 @@ class Ui_MainWindow(object):
         self.cikis.setObjectName("cikis")
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
         self.tableWidget.setGeometry(QtCore.QRect(200, 170, 581, 411))
-        self.tableWidget.setStyleSheet("background:white;\n"
-"border-radius:10px;\n"
-"padding:5px;\n"
-"color:black")
+        self.tableWidget.setStyleSheet("QTableView{\n"
+"color:black;\n"
+"background:white;\n"
+"font-weight:bold;\n"
+"border-radius:5px\n"
+"}")
         self.tableWidget.setTabKeyNavigation(True)
         self.tableWidget.setDragEnabled(True)
         self.tableWidget.setRowCount(0)

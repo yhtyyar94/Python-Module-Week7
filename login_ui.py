@@ -36,6 +36,7 @@ class Ui_MainWindow(object):
 "font-weight:400;\n"
 "background:none")
         self.label_2.setObjectName("label_2")
+
         self.username_lineEdit = QtWidgets.QLineEdit(self.centralwidget)
         self.username_lineEdit.setGeometry(QtCore.QRect(460, 290, 281, 31))
         self.username_lineEdit.setStyleSheet("QLineEdit{\n"

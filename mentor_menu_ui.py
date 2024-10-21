@@ -70,6 +70,7 @@ class Ui_MainWindow(object):
         self.exit_button = QtWidgets.QPushButton(self.centralwidget)
         self.exit_button.setGeometry(QtCore.QRect(120, 190, 91, 31))
         self.exit_button.setStyleSheet("QPushButton{\n"
+
 "color:white;\n"
 "background:#47545a;\n"
 "border-radius:10px;\n"

@@ -339,10 +339,12 @@ font-weight:bold
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background:white;
-border-radius:10px;
-padding:5px;
-color:black</string>
+     <string notr="true">QTableView{
+color:black;
+background:white;
+font-weight:bold;
+border-radius:5px
+}</string>
     </property>
     <property name="tabKeyNavigation">
      <bool>true</bool>
