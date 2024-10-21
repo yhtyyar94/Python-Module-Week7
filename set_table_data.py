@@ -5,7 +5,7 @@ from backend.list_files import list_drive_files
 from backend.read_xlsx import read_xlsx
 
 
-def set_table_data(table, file_name):
+def set_table_data(window, file_name):
     drive_files = list_drive_files()
 
     if len(drive_files) == 0:
@@ -21,8 +21,8 @@ def set_table_data(table, file_name):
     rows = read_xlsx(file_name)
     # filter out empty rows
     headers = [header for header in rows[0] if header is not None]
-    table.tableWidget.setColumnCount(len(headers))
-    table.tableWidget.setRowCount(len(rows) - 1)
+    window.tableWidget.setColumnCount(len(headers))
+    window.tableWidget.setRowCount(len(rows) - 1)
 
     for i, header in enumerate(headers):
         if header == "None" or header is None:
@@ -32,7 +32,7 @@ def set_table_data(table, file_name):
             QtCore.Qt.AlignmentFlag.AlignLeading | QtCore.Qt.AlignmentFlag.AlignVCenter
         )
         item.setText(header)
-        table.tableWidget.setHorizontalHeaderItem(i, item)
+        window.tableWidget.setHorizontalHeaderItem(i, item)
 
     for i in range(1, len(rows)):
         for j in range(len(headers)):
@@ -44,4 +44,4 @@ def set_table_data(table, file_name):
                 | QtCore.Qt.AlignmentFlag.AlignVCenter
             )
             item.setText(str(rows[i][j]))
-            table.tableWidget.setItem(i - 1, j, item)
+            window.tableWidget.setItem(i - 1, j, item)
