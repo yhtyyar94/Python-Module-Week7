@@ -12,8 +12,8 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.setFixedSize(800, 600)
-        MainWindow.setStyleSheet("background-image: url(./assets/zemin-buyuk.jpg);")
+        MainWindow.resize(800, 600)
+        MainWindow.setStyleSheet("background-image: url(:/assets/assets/zemin-buyuk.jpg);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
