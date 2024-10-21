@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '/Users/yhtyyarannayev/Documents/GitHub/Python-Module-Week7/English/application_menu.ui'
+# Form implementation generated from reading ui file '/Users/yhtyyarannayev/Documents/GitHub/Python-Module-Week7/application_menu.ui'
 #
 # Created by: PyQt6 UI code generator 6.2.2
 #
@@ -17,9 +17,9 @@ class Ui_MainWindow(object):
 "QWidget::setFixedSize(800, 600);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.search_Button = QtWidgets.QPushButton(self.centralwidget)
-        self.search_Button.setGeometry(QtCore.QRect(680, 140, 100, 32))
-        self.search_Button.setStyleSheet("QPushButton{\n"
+        self.pushButton = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton.setGeometry(QtCore.QRect(680, 140, 100, 32))
+        self.pushButton.setStyleSheet("QPushButton{\n"
 "color:white;\n"
 "background:#db1e3c;\n"
 "border-radius:10px;\n"
@@ -32,26 +32,25 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.search_Button.setObjectName("search_Button")
+        self.pushButton.setObjectName("pushButton")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(280, 70, 271, 41))
+        self.label.setGeometry(QtCore.QRect(280, 70, 241, 41))
         self.label.setStyleSheet("color:white;\n"
 "font-size:36px;\n"
 "font-weight:bold;\n"
 "background:none")
         self.label.setObjectName("label")
-        self.search_Text = QtWidgets.QLineEdit(self.centralwidget)
-        self.search_Text.setGeometry(QtCore.QRect(310, 140, 361, 31))
-        self.search_Text.setStyleSheet("QLineEdit{\n"
+        self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
+        self.lineEdit.setGeometry(QtCore.QRect(310, 140, 361, 31))
+        self.lineEdit.setStyleSheet("QLineEdit{\n"
 "border-radius:10px;\n"
 "background:none;\n"
 "padding:5px\n"
 "}")
-        self.search_Text.setText("")
-        self.search_Text.setObjectName("search_Text")
-        self.assigned_Button = QtWidgets.QPushButton(self.centralwidget)
-        self.assigned_Button.setGeometry(QtCore.QRect(20, 180, 231, 32))
-        self.assigned_Button.setStyleSheet("QPushButton{\n"
+        self.lineEdit.setObjectName("lineEdit")
+        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_2.setGeometry(QtCore.QRect(20, 180, 231, 32))
+        self.pushButton_2.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -63,10 +62,10 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.assigned_Button.setObjectName("assigned_Button")
-        self.unassigned_Button = QtWidgets.QPushButton(self.centralwidget)
-        self.unassigned_Button.setGeometry(QtCore.QRect(20, 220, 251, 32))
-        self.unassigned_Button.setStyleSheet("QPushButton{\n"
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_3.setGeometry(QtCore.QRect(20, 220, 251, 32))
+        self.pushButton_3.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -78,10 +77,10 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.unassigned_Button.setObjectName("unassigned_Button")
-        self.previous_vit_Button = QtWidgets.QPushButton(self.centralwidget)
-        self.previous_vit_Button.setGeometry(QtCore.QRect(310, 180, 151, 32))
-        self.previous_vit_Button.setStyleSheet("QPushButton{\n"
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_4.setGeometry(QtCore.QRect(310, 180, 151, 32))
+        self.pushButton_4.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -93,10 +92,10 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.previous_vit_Button.setObjectName("previous_vit_Button")
-        self.filtered_app_Button = QtWidgets.QPushButton(self.centralwidget)
-        self.filtered_app_Button.setGeometry(QtCore.QRect(310, 220, 151, 32))
-        self.filtered_app_Button.setStyleSheet("QPushButton{\n"
+        self.pushButton_4.setObjectName("pushButton_4")
+        self.pushButton_5 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_5.setGeometry(QtCore.QRect(310, 220, 151, 32))
+        self.pushButton_5.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -108,10 +107,10 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.filtered_app_Button.setObjectName("filtered_app_Button")
-        self.duplicate_record_Button = QtWidgets.QPushButton(self.centralwidget)
-        self.duplicate_record_Button.setGeometry(QtCore.QRect(470, 180, 151, 32))
-        self.duplicate_record_Button.setStyleSheet("QPushButton{\n"
+        self.pushButton_5.setObjectName("pushButton_5")
+        self.pushButton_6 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_6.setGeometry(QtCore.QRect(470, 180, 151, 32))
+        self.pushButton_6.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -123,10 +122,10 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.duplicate_record_Button.setObjectName("duplicate_record_Button")
-        self.distinct_record_Button = QtWidgets.QPushButton(self.centralwidget)
-        self.distinct_record_Button.setGeometry(QtCore.QRect(470, 220, 151, 32))
-        self.distinct_record_Button.setStyleSheet("QPushButton{\n"
+        self.pushButton_6.setObjectName("pushButton_6")
+        self.pushButton_7 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_7.setGeometry(QtCore.QRect(470, 220, 151, 32))
+        self.pushButton_7.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -138,10 +137,10 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.distinct_record_Button.setObjectName("distinct_record_Button")
-        self.all_app_Button = QtWidgets.QPushButton(self.centralwidget)
-        self.all_app_Button.setGeometry(QtCore.QRect(20, 140, 141, 31))
-        self.all_app_Button.setStyleSheet("QPushButton{\n"
+        self.pushButton_7.setObjectName("pushButton_7")
+        self.pushButton_8 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_8.setGeometry(QtCore.QRect(20, 140, 141, 31))
+        self.pushButton_8.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -153,10 +152,10 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.all_app_Button.setObjectName("all_app_Button")
-        self.mainmenu_Button = QtWidgets.QPushButton(self.centralwidget)
-        self.mainmenu_Button.setGeometry(QtCore.QRect(630, 180, 151, 32))
-        self.mainmenu_Button.setStyleSheet("QPushButton{\n"
+        self.pushButton_8.setObjectName("pushButton_8")
+        self.pushButton_9 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_9.setGeometry(QtCore.QRect(630, 180, 151, 32))
+        self.pushButton_9.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -168,10 +167,10 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.mainmenu_Button.setObjectName("mainmenu_Button")
-        self.exit_Button = QtWidgets.QPushButton(self.centralwidget)
-        self.exit_Button.setGeometry(QtCore.QRect(630, 220, 151, 32))
-        self.exit_Button.setStyleSheet("QPushButton{\n"
+        self.pushButton_9.setObjectName("pushButton_9")
+        self.pushButton_10 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_10.setGeometry(QtCore.QRect(630, 220, 151, 32))
+        self.pushButton_10.setStyleSheet("QPushButton{\n"
 "color:white;\n"
 "background:#47545a;\n"
 "border-radius:10px;\n"
@@ -184,7 +183,7 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.exit_Button.setObjectName("exit_Button")
+        self.pushButton_10.setObjectName("pushButton_10")
         self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
         self.tableWidget.setGeometry(QtCore.QRect(20, 270, 761, 321))
         self.tableWidget.setStyleSheet("background:white;\n"
@@ -233,32 +232,32 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.search_Button.setText(_translate("MainWindow", "Search"))
-        self.label.setText(_translate("MainWindow", "APPLICATIONS"))
-        self.search_Text.setPlaceholderText(_translate("MainWindow", "Enter the Word You Want to Search"))
-        self.assigned_Button.setText(_translate("MainWindow", "Assigned Mentor Interviews"))
-        self.unassigned_Button.setText(_translate("MainWindow", "Unassigned Mentor Interviews"))
-        self.previous_vit_Button.setText(_translate("MainWindow", "Previous VIT Check"))
-        self.filtered_app_Button.setText(_translate("MainWindow", "Filtered Application"))
-        self.duplicate_record_Button.setText(_translate("MainWindow", "Duplicate Record"))
-        self.distinct_record_Button.setText(_translate("MainWindow", "Distinct Record"))
-        self.all_app_Button.setText(_translate("MainWindow", "All Applications"))
-        self.mainmenu_Button.setText(_translate("MainWindow", "User Menu"))
-        self.exit_Button.setText(_translate("MainWindow", "Exit"))
+        self.pushButton.setText(_translate("MainWindow", "Ara"))
+        self.label.setText(_translate("MainWindow", "BAŞVURULAR"))
+        self.lineEdit.setPlaceholderText(_translate("MainWindow", "Aramak istdiğiniz kelimeyi girin..."))
+        self.pushButton_2.setText(_translate("MainWindow", "Tanımlanan Mentör Görüşmeleri"))
+        self.pushButton_3.setText(_translate("MainWindow", "Tanımlanmayan Mentör Görüşmeleri"))
+        self.pushButton_4.setText(_translate("MainWindow", "Önceki VIT Kontrol"))
+        self.pushButton_5.setText(_translate("MainWindow", "Başvuru Filtireli"))
+        self.pushButton_6.setText(_translate("MainWindow", "Mükerrer kayıt"))
+        self.pushButton_7.setText(_translate("MainWindow", "Faklı Kayıt"))
+        self.pushButton_8.setText(_translate("MainWindow", "Tüm Başvurular"))
+        self.pushButton_9.setText(_translate("MainWindow", "Tercihler"))
+        self.pushButton_10.setText(_translate("MainWindow", "Çıkış"))
         self.tableWidget.setSortingEnabled(True)
         item = self.tableWidget.horizontalHeaderItem(0)
-        item.setText(_translate("MainWindow", "Date"))
+        item.setText(_translate("MainWindow", "Tarih"))
         item = self.tableWidget.horizontalHeaderItem(1)
-        item.setText(_translate("MainWindow", "Name, Surname"))
+        item.setText(_translate("MainWindow", "Isim Soyisim"))
         item = self.tableWidget.horizontalHeaderItem(2)
         item.setText(_translate("MainWindow", "Email"))
         item = self.tableWidget.horizontalHeaderItem(3)
-        item.setText(_translate("MainWindow", "Telephone"))
+        item.setText(_translate("MainWindow", "Telefon"))
         item = self.tableWidget.horizontalHeaderItem(4)
-        item.setText(_translate("MainWindow", "Postal Code"))
+        item.setText(_translate("MainWindow", "Posta Kodu"))
         item = self.tableWidget.horizontalHeaderItem(5)
-        item.setText(_translate("MainWindow", "State"))
+        item.setText(_translate("MainWindow", "Eyalet"))
         item = self.tableWidget.horizontalHeaderItem(6)
-        item.setText(_translate("MainWindow", "Current Status"))
+        item.setText(_translate("MainWindow", "Mevcut Durum"))
         item = self.tableWidget.horizontalHeaderItem(7)
-        item.setText(_translate("MainWindow", "Economic Status"))
+        item.setText(_translate("MainWindow", "Ekonomik Durum"))

@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '/Users/yhtyyarannayev/Documents/GitHub/Python-Module-Week7/English/admin_control_menu.ui'
+# Form implementation generated from reading ui file '/Users/yhtyyarannayev/Documents/GitHub/Python-Module-Week7/admin_control_menu.ui'
 #
 # Created by: PyQt6 UI code generator 6.2.2
 #
@@ -18,15 +18,15 @@ class Ui_MainWindow(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(270, 90, 241, 41))
+        self.label.setGeometry(QtCore.QRect(260, 70, 241, 41))
         self.label.setStyleSheet("color:white;\n"
 "font-size:36px;\n"
 "font-weight:bold;\n"
 "background:none")
         self.label.setObjectName("label")
-        self.event_check = QtWidgets.QPushButton(self.centralwidget)
-        self.event_check.setGeometry(QtCore.QRect(20, 170, 161, 41))
-        self.event_check.setStyleSheet("QPushButton{\n"
+        self.etkinlik_kontrol = QtWidgets.QPushButton(self.centralwidget)
+        self.etkinlik_kontrol.setGeometry(QtCore.QRect(20, 170, 161, 41))
+        self.etkinlik_kontrol.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -38,7 +38,7 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.event_check.setObjectName("event_check")
+        self.etkinlik_kontrol.setObjectName("etkinlik_kontrol")
         self.cikis = QtWidgets.QPushButton(self.centralwidget)
         self.cikis.setGeometry(QtCore.QRect(20, 410, 161, 41))
         self.cikis.setStyleSheet("QPushButton{\n"
@@ -99,9 +99,9 @@ class Ui_MainWindow(object):
         self.tableWidget.horizontalHeader().setMinimumSectionSize(19)
         self.tableWidget.verticalHeader().setDefaultSectionSize(35)
         self.tableWidget.verticalHeader().setMinimumSectionSize(21)
-        self.send_email = QtWidgets.QPushButton(self.centralwidget)
-        self.send_email.setGeometry(QtCore.QRect(20, 250, 161, 41))
-        self.send_email.setStyleSheet("QPushButton{\n"
+        self.mail_gonder = QtWidgets.QPushButton(self.centralwidget)
+        self.mail_gonder.setGeometry(QtCore.QRect(20, 250, 161, 41))
+        self.mail_gonder.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -113,10 +113,10 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.send_email.setObjectName("send_email")
-        self.preferences = QtWidgets.QPushButton(self.centralwidget)
-        self.preferences.setGeometry(QtCore.QRect(20, 330, 161, 41))
-        self.preferences.setStyleSheet("QPushButton{\n"
+        self.mail_gonder.setObjectName("mail_gonder")
+        self.tercihler = QtWidgets.QPushButton(self.centralwidget)
+        self.tercihler.setGeometry(QtCore.QRect(20, 330, 161, 41))
+        self.tercihler.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -128,7 +128,7 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.preferences.setObjectName("preferences")
+        self.tercihler.setObjectName("tercihler")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -138,16 +138,16 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label.setText(_translate("MainWindow", "ADMIN MENU"))
-        self.event_check.setText(_translate("MainWindow", "Event Check"))
-        self.cikis.setText(_translate("MainWindow", "Exit"))
+        self.etkinlik_kontrol.setText(_translate("MainWindow", "Etkinlik Kontrol"))
+        self.cikis.setText(_translate("MainWindow", "Çıkış"))
         self.tableWidget.setSortingEnabled(True)
         item = self.tableWidget.horizontalHeaderItem(0)
-        item.setText(_translate("MainWindow", "Event Name"))
+        item.setText(_translate("MainWindow", "Etkinlik Adı"))
         item = self.tableWidget.horizontalHeaderItem(1)
-        item.setText(_translate("MainWindow", "Start Time"))
+        item.setText(_translate("MainWindow", "Başlanıç Zamanı"))
         item = self.tableWidget.horizontalHeaderItem(2)
-        item.setText(_translate("MainWindow", "Participant Email"))
+        item.setText(_translate("MainWindow", "Katılımcı Email"))
         item = self.tableWidget.horizontalHeaderItem(3)
-        item.setText(_translate("MainWindow", "Organizer Email"))
-        self.send_email.setText(_translate("MainWindow", "Send Email"))
-        self.preferences.setText(_translate("MainWindow", "Preferences"))
+        item.setText(_translate("MainWindow", "Oranizatör Email"))
+        self.mail_gonder.setText(_translate("MainWindow", "Mail  Gönder"))
+        self.tercihler.setText(_translate("MainWindow", "Tercihler"))
