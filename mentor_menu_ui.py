@@ -12,38 +12,36 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(800, 600)
-        MainWindow.setStyleSheet("background-image: url(:/assets/assets/zemin-buyuk.jpg);")
+        MainWindow.setFixedSize(800, 600)
+        MainWindow.setStyleSheet("background-image: url(./assets/zemin-buyuk.jpg);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
-        self.tableWidget.setGeometry(QtCore.QRect(10, 240, 771, 341))
-        self.tableWidget.setStyleSheet("QTableView{\n"
+        self.tableView = QtWidgets.QTableView(self.centralwidget)
+        self.tableView.setGeometry(QtCore.QRect(10, 240, 771, 341))
+        self.tableView.setStyleSheet("QTableView{\n"
 "color:black;\n"
 "background:white;\n"
 "font-weight:bold;\n"
 "border-radius:5px\n"
 "}")
-        self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(0)
-        self.tableWidget.setRowCount(0)
-        self.comboBox = QtWidgets.QComboBox(self.centralwidget)
-        self.comboBox.setGeometry(QtCore.QRect(340, 190, 441, 31))
-        self.comboBox.setStyleSheet("QComboBox{\n"
+        self.tableView.setObjectName("tableView")
+        self.filter_select_button = QtWidgets.QComboBox(self.centralwidget)
+        self.filter_select_button.setGeometry(QtCore.QRect(340, 190, 441, 31))
+        self.filter_select_button.setStyleSheet("QComboBox{\n"
 "border-radius:10px;\n"
 "font-weight:bold;\n"
 "background:white;\n"
 "color:black\n"
 "}")
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
+        self.filter_select_button.setObjectName("filter_select_button")
+        self.filter_select_button.addItem("")
+        self.filter_select_button.addItem("")
+        self.filter_select_button.addItem("")
+        self.filter_select_button.addItem("")
+        self.filter_select_button.addItem("")
+        self.filter_select_button.addItem("")
+        self.filter_select_button.addItem("")
+        self.filter_select_button.addItem("")
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(260, 80, 291, 31))
         self.label.setStyleSheet("QLabel{\n"
@@ -54,9 +52,9 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.label.setObjectName("label")
-        self.pushButton_5 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_5.setGeometry(QtCore.QRect(10, 190, 91, 31))
-        self.pushButton_5.setStyleSheet("QPushButton{\n"
+        self.main_menu = QtWidgets.QPushButton(self.centralwidget)
+        self.main_menu.setGeometry(QtCore.QRect(10, 190, 91, 31))
+        self.main_menu.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -68,10 +66,11 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.pushButton_5.setObjectName("pushButton_5")
-        self.pushButton_4 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_4.setGeometry(QtCore.QRect(120, 190, 91, 31))
-        self.pushButton_4.setStyleSheet("QPushButton{\n"
+        self.main_menu.setObjectName("main_menu")
+        self.exit_button = QtWidgets.QPushButton(self.centralwidget)
+        self.exit_button.setGeometry(QtCore.QRect(120, 190, 91, 31))
+        self.exit_button.setStyleSheet("QPushButton{\n"
+
 "color:white;\n"
 "background:#47545a;\n"
 "border-radius:10px;\n"
@@ -84,10 +83,10 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_3.setGeometry(QtCore.QRect(10, 140, 201, 31))
-        self.pushButton_3.setStyleSheet("QPushButton{\n"
+        self.exit_button.setObjectName("exit_button")
+        self.all_meetings = QtWidgets.QPushButton(self.centralwidget)
+        self.all_meetings.setGeometry(QtCore.QRect(10, 140, 201, 31))
+        self.all_meetings.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -99,7 +98,7 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.pushButton_3.setObjectName("pushButton_3")
+        self.all_meetings.setObjectName("all_meetings")
         self.lineEdit = QtWidgets.QLineEdit(self.centralwidget)
         self.lineEdit.setGeometry(QtCore.QRect(340, 140, 351, 31))
         self.lineEdit.setStyleSheet("QLineEdit{\n"
@@ -111,9 +110,9 @@ class Ui_MainWindow(object):
 "}")
         self.lineEdit.setText("")
         self.lineEdit.setObjectName("lineEdit")
-        self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(700, 140, 75, 31))
-        self.pushButton_2.setStyleSheet("QPushButton{\n"
+        self.search_button = QtWidgets.QPushButton(self.centralwidget)
+        self.search_button.setGeometry(QtCore.QRect(700, 140, 75, 31))
+        self.search_button.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
 "border-radius:10px;\n"
@@ -125,7 +124,7 @@ class Ui_MainWindow(object):
 "border-radius:10px;\n"
 "font-weight:bold\n"
 "}")
-        self.pushButton_2.setObjectName("pushButton_2")
+        self.search_button.setObjectName("search_button")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -134,17 +133,17 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.comboBox.setItemText(0, _translate("MainWindow", "Vıt Projesinin Tamamına Katılması Uygun Olur"))
-        self.comboBox.setItemText(1, _translate("MainWindow", "VIT Projesi ilk IT Eğtimi Al... ya Yönlendirilmesi Uygun Olur"))
-        self.comboBox.setItemText(2, _translate("MainWindow", "VIT Projesi İngilizce Eğtimi Al... ya Yönlendirilmesi Uygun Olur"))
-        self.comboBox.setItemText(3, _translate("MainWindow", "Vit Pojesi Kapsamında Dir.. Yönlendirilmesi Uygun Olur"))
-        self.comboBox.setItemText(4, _translate("MainWindow", "Direkt Bireysel Koçluk İle İşe Yönlendirilmesi Uygun Olur"))
-        self.comboBox.setItemText(5, _translate("MainWindow", "Bir Sonraki VIT Projesine Katılması Daha Uygun Olur"))
-        self.comboBox.setItemText(6, _translate("MainWindow", "Başka Bir Sektöre Yönlendirilmesi"))
-        self.comboBox.setItemText(7, _translate("MainWindow", "Diğer"))
+        self.filter_select_button.setItemText(0, _translate("MainWindow", "Vıt Projesinin Tamamına Katılması Uygun Olur"))
+        self.filter_select_button.setItemText(1, _translate("MainWindow", "VIT Projesi ilk IT Eğtimi Al... ya Yönlendirilmesi Uygun Olur"))
+        self.filter_select_button.setItemText(2, _translate("MainWindow", "VIT Projesi İngilizce Eğtimi Al... ya Yönlendirilmesi Uygun Olur"))
+        self.filter_select_button.setItemText(3, _translate("MainWindow", "Vit Pojesi Kapsamında Dir.. Yönlendirilmesi Uygun Olur"))
+        self.filter_select_button.setItemText(4, _translate("MainWindow", "Direkt Bireysel Koçluk İle İşe Yönlendirilmesi Uygun Olur"))
+        self.filter_select_button.setItemText(5, _translate("MainWindow", "Bir Sonraki VIT Projesine Katılması Daha Uygun Olur"))
+        self.filter_select_button.setItemText(6, _translate("MainWindow", "Başka Bir Sektöre Yönlendirilmesi"))
+        self.filter_select_button.setItemText(7, _translate("MainWindow", "Diğer"))
         self.label.setText(_translate("MainWindow", "Mentor Interview"))
-        self.pushButton_5.setText(_translate("MainWindow", "TERCİHLER"))
-        self.pushButton_4.setText(_translate("MainWindow", "KAPAT"))
-        self.pushButton_3.setText(_translate("MainWindow", "TÜM GÖRÜŞMELER"))
-        self.lineEdit.setPlaceholderText(_translate("MainWindow", "ARANACAK METNİ GİRİNİZ"))
-        self.pushButton_2.setText(_translate("MainWindow", "BUL"))
+        self.main_menu.setText(_translate("MainWindow", "Main Menu"))
+        self.exit_button.setText(_translate("MainWindow", "Exit"))
+        self.all_meetings.setText(_translate("MainWindow", "All Meetings"))
+        self.lineEdit.setPlaceholderText(_translate("MainWindow", "Enter your search term..."))
+        self.search_button.setText(_translate("MainWindow", "Search"))

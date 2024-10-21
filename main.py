@@ -26,37 +26,37 @@ if __name__ == "__main__":
 
     def admin_setup():
         admin_menu.setupUi(MainWindow)
-        admin_menu.Basvurular.clicked.connect(applications_setup)
-        admin_menu.Mentor.clicked.connect(mentor_setup)
-        admin_menu.Basvurular_2.clicked.connect(interviews_menu_setup)
-        admin_menu.Adminmenu.clicked.connect(setup_admin_control_menu)
-        admin_menu.pushButton.clicked.connect(MainWindow.close)
+        admin_menu.applications_Button.clicked.connect(applications_setup)
+        admin_menu.Mentor_interview_Button.clicked.connect(mentor_setup)
+        admin_menu.interviews_Button.clicked.connect(interviews_menu_setup)
+        admin_menu.Admin_menu_Button.clicked.connect(setup_admin_control_menu)
+        admin_menu.exit_Button.clicked.connect(MainWindow.close)
 
     def applications_setup():
         applications_menu.setupUi(MainWindow)
-        applications_menu.pushButton_9.clicked.connect(admin_setup)
-        applications_menu.pushButton_10.clicked.connect(MainWindow.close)
+        applications_menu.mainmenu_Button.clicked.connect(admin_setup)
+        applications_menu.exit_Button.clicked.connect(MainWindow.close)
 
     def mentor_setup():
         mentor_menu.setupUi(MainWindow)
-        mentor_menu.pushButton_5.clicked.connect(admin_setup)
-        mentor_menu.pushButton_4.clicked.connect(MainWindow.close)
+        mentor_menu.main_menu.clicked.connect(admin_setup)
+        mentor_menu.exit_button.clicked.connect(MainWindow.close)
 
     def interviews_menu_setup():
         interviews_menu.setupUi(MainWindow)
-        interviews_menu.pushButton_tercih.clicked.connect(admin_setup)
-        interviews_menu.pushButton_exit.clicked.connect(MainWindow.close)
+        interviews_menu.mainmenu_Button.clicked.connect(admin_setup)
+        interviews_menu.exit_Button.clicked.connect(MainWindow.close)
 
     def user_setup():
         user_menu.setupUi(MainWindow)
-        user_menu.basvurular.clicked.connect(applications_setup)
-        user_menu.mentor_gorusmesi.clicked.connect(mentor_setup)
-        user_menu.mulakatlar.clicked.connect(interviews_menu_setup)
-        user_menu.cikis.clicked.connect(MainWindow.close)
+        user_menu.app_Button.clicked.connect(applications_setup)
+        user_menu.mentor_interview_Button.clicked.connect(mentor_setup)
+        user_menu.interviews_Button.clicked.connect(interviews_menu_setup)
+        user_menu.exit_Button.clicked.connect(MainWindow.close)
 
     def setup_admin_control_menu():
         admin_control_menu.setupUi(MainWindow)
-        admin_control_menu.tercihler.clicked.connect(admin_setup)
+        admin_control_menu.preferences.clicked.connect(admin_setup)
         admin_control_menu.cikis.clicked.connect(MainWindow.close)
 
     ui.pushButton.clicked.connect(admin_setup)

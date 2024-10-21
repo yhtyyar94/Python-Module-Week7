@@ -35,7 +35,7 @@ border-radius:5px
 }</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="filter_select_button">
     <property name="geometry">
      <rect>
       <x>340</x>
@@ -115,7 +115,7 @@ background:none
      <string>Mentor Interview</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="main_menu">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -139,10 +139,10 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>TERCİHLER</string>
+     <string>Main Menu</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="exit_button">
     <property name="geometry">
      <rect>
       <x>120</x>
@@ -167,10 +167,10 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>KAPAT</string>
+     <string>Exit</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="all_meetings">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -194,7 +194,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>TÜM GÖRÜŞMELER</string>
+     <string>All Meetings</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
@@ -219,10 +219,10 @@ padding:5px;
      <string/>
     </property>
     <property name="placeholderText">
-     <string>ARANACAK METNİ GİRİNİZ</string>
+     <string>Enter your search term...</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="search_button">
     <property name="geometry">
      <rect>
       <x>700</x>
@@ -246,7 +246,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>BUL</string>
+     <string>Search</string>
     </property>
    </widget>
   </widget>
