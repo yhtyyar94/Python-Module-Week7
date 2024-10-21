@@ -12,19 +12,21 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.setFixedSize(800, 600)
-        MainWindow.setStyleSheet("background-image: url(./assets/zemin-buyuk.jpg);")
+        MainWindow.resize(800, 600)
+        MainWindow.setStyleSheet("background-image: url(:/assets/assets/zemin-buyuk.jpg);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.tableView = QtWidgets.QTableView(self.centralwidget)
-        self.tableView.setGeometry(QtCore.QRect(10, 240, 771, 341))
-        self.tableView.setStyleSheet("QTableView{\n"
+        self.tableWidget = QtWidgets.QTableWidget(self.centralwidget)
+        self.tableWidget.setGeometry(QtCore.QRect(10, 240, 771, 341))
+        self.tableWidget.setStyleSheet("QTableView{\n"
 "color:black;\n"
 "background:white;\n"
 "font-weight:bold;\n"
 "border-radius:5px\n"
 "}")
-        self.tableView.setObjectName("tableView")
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(0)
+        self.tableWidget.setRowCount(0)
         self.filter_select_button = QtWidgets.QComboBox(self.centralwidget)
         self.filter_select_button.setGeometry(QtCore.QRect(340, 190, 441, 31))
         self.filter_select_button.setStyleSheet("QComboBox{\n"
@@ -70,7 +72,6 @@ class Ui_MainWindow(object):
         self.exit_button = QtWidgets.QPushButton(self.centralwidget)
         self.exit_button.setGeometry(QtCore.QRect(120, 190, 91, 31))
         self.exit_button.setStyleSheet("QPushButton{\n"
-
 "color:white;\n"
 "background:#47545a;\n"
 "border-radius:10px;\n"
