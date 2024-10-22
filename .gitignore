@@ -5,3 +5,4 @@ crm/
 credentials.json
 token.json
 *.xlsx
+.venv/*
