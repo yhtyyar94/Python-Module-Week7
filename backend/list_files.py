@@ -34,4 +34,3 @@ def list_drive_files():
             print(f"Dosya Adı: {item['name']} (ID: {item['id']})")
 
         print("İşlem tamamlandı.")
-        return items

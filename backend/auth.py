@@ -13,7 +13,7 @@ SCOPES = ["https://www.googleapis.com/auth/drive"]  # talebimiz.
 
 
 def authenticate():
-    creds = None  # ne sunacagiz.
+    creds = None  # Ne sunacagiz.Istegimize karsilik kimligimiz.
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first time.
     if os.path.exists("token.json"):  # Bu bizim gecici kullanimlik zeton.
@@ -27,7 +27,9 @@ def authenticate():
                 "credentials.json", SCOPES
             )
             creds = flow.run_local_server(port=0)
-        # Save the credentials for the next run
+
+       # bu kode API’ye erişim iznini kaydeder,
+       # sonra ki grislerde bu zeton ile sorgusuz giris yapilir.
         with open("token.json", "w") as token:
             token.write(creds.to_json())
     return creds
