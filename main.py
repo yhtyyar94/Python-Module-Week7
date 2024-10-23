@@ -59,6 +59,10 @@ if __name__ == "__main__":
         admin_control_menu.send_email.clicked.connect(admin_setup)
         admin_control_menu.exit.clicked.connect(MainWindow.close)
 
+    def login_menu():
+
+        pass
+
     ui.pushButton.clicked.connect(admin_setup)
 
     MainWindow.show()
