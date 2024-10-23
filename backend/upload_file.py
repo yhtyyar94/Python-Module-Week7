@@ -7,7 +7,7 @@ from backend.auth import authenticate
 
 def update_file(
     file_id,
-    filename="output_filename.xlsx",
+    filename,
     mimeType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
 ):
     creds = authenticate()

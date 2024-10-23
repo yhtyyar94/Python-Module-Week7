@@ -1,0 +1,125 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>VIT Projesi Başvuru Formu</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents" native="true">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>780</width>
+        <height>1000</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <!-- Email Section -->
+       <item>
+        <widget class="QLabel" name="emailLabel">
+         <property name="text">
+          <string>Email Adresiniz:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="emailInput"/>
+       </item>
+
+       <!-- Name Section -->
+       <item>
+        <widget class="QLabel" name="nameLabel">
+         <property name="text">
+          <string>Adınız Soyadınız:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="nameInput"/>
+       </item>
+
+       <!-- Telefon Section -->
+       <item>
+        <widget class="QLabel" name="phoneLabel">
+         <property name="text">
+          <string>Telefon Numaranız:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="phoneInput"/>
+       </item>
+
+       <!-- Posta Kodu Section -->
+       <item>
+        <widget class="QLabel" name="postcodeLabel">
+         <property name="text">
+          <string>Posta Kodunuz:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="postcodeInput"/>
+       </item>
+
+       <!-- State Section -->
+       <item>
+        <widget class="QLabel" name="stateLabel">
+         <property name="text">
+          <string>Yaşadığınız Eyalet:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="stateCombo">
+         <item>
+          <property name="text">
+           <string>Seçenek 1</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Seçenek 2</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Seçenek 3</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+
+       <!-- Submit Button -->
+       <item>
+        <widget class="QPushButton" name="submitButton">
+         <property name="text">
+          <string>Gönder</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
