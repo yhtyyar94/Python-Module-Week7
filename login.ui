@@ -108,7 +108,7 @@ padding:5px
      <string/>
     </property>
     <property name="echoMode">
-     <enum>QLineEdit::EchoMode::Password</enum>
+     <enum>QLineEdit::Normal</enum>
     </property>
     <property name="placeholderText">
      <string>Şifrenizi giriniz...</string>
@@ -206,6 +206,25 @@ background:none</string>
     </property>
     <property name="text">
      <string>VIT 5</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="error_message">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>539</y>
+      <width>551</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:white;
+font-size:18px;
+font-weight:400;
+background:none</string>
+    </property>
+    <property name="text">
+     <string>text</string>
     </property>
    </widget>
   </widget>

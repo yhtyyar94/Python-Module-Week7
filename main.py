@@ -24,6 +24,13 @@ if __name__ == "__main__":
     user_menu = UserUI()
     admin_control_menu = AdminControlUI()
 
+    rol = ""
+
+    def get_rol(user_rol):
+        global rol
+        rol = user_rol
+        return rol
+
     def admin_setup():
         admin_menu.setupUi(MainWindow)
         admin_menu.applications_Button.clicked.connect(applications_setup)
@@ -59,11 +66,9 @@ if __name__ == "__main__":
         admin_control_menu.send_email.clicked.connect(admin_setup)
         admin_control_menu.exit.clicked.connect(MainWindow.close)
 
-    def login_menu():
-
-        pass
-
     ui.pushButton.clicked.connect(admin_setup)
+
+    ui.error_message.hide()
 
     MainWindow.show()
     sys.exit(app.exec())
