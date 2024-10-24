@@ -60,7 +60,7 @@ font-weight:400;
 background:none</string>
     </property>
     <property name="text">
-     <string>Kullanıcı Adı</string>
+     <string>Username</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit">
@@ -84,7 +84,7 @@ padding:5px
      <string/>
     </property>
     <property name="placeholderText">
-     <string>Kullanıcı adınızı giriniz...</string>
+     <string>Enter your username...</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEdit_2">
@@ -108,10 +108,10 @@ padding:5px
      <string/>
     </property>
     <property name="echoMode">
-     <enum>QLineEdit::EchoMode::Password</enum>
+     <enum>QLineEdit::Normal</enum>
     </property>
     <property name="placeholderText">
-     <string>Şifrenizi giriniz...</string>
+     <string>Enter your password...</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -130,10 +130,10 @@ font-weight:400;
 background:none</string>
     </property>
     <property name="text">
-     <string>Şifre</string>
+     <string>Password</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="login_button">
     <property name="geometry">
      <rect>
       <x>460</x>
@@ -158,10 +158,10 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Giriş</string>
+     <string>Login</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="exit_button">
     <property name="geometry">
      <rect>
       <x>620</x>
@@ -186,7 +186,7 @@ font-weight:bold
 }</string>
     </property>
     <property name="text">
-     <string>Çıkış</string>
+     <string>Exit</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">

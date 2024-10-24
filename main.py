@@ -59,7 +59,7 @@ if __name__ == "__main__":
         admin_control_menu.send_email.clicked.connect(admin_setup)
         admin_control_menu.exit.clicked.connect(MainWindow.close)
 
-    ui.pushButton.clicked.connect(admin_setup)
+    ui.login_button.clicked.connect(admin_setup)
 
     MainWindow.show()
     sys.exit(app.exec())
