@@ -5,4 +5,4 @@ from backend.write_xlsx import write_xlsx
 from backend.set_table_data import set_table_data
 
 
-set_table_data("Kullanicilar.xlsx")
+set_table_data("ui", "Kullanicilar.xlsx")

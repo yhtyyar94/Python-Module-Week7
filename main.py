@@ -1,4 +1,5 @@
 from check_assets import check_asset_path_and_fix_size
+from backend.set_table_data import set_table_data
 
 
 if __name__ == "__main__":
@@ -33,6 +34,9 @@ if __name__ == "__main__":
         admin_menu.interviews_Button.clicked.connect(interviews_menu_setup)
         admin_menu.Admin_menu_Button.clicked.connect(setup_admin_control_menu)
         admin_menu.exit_Button.clicked.connect(MainWindow.close)
+        # tablo olustur ve data yukle
+        admin_menu.Admin_menu_Button.clicked.connect(
+            lambda: set_table_data(admin_control_menu, "Basvurular.xlsx"))
 
     def applications_setup():
         applications_menu.setupUi(MainWindow)
