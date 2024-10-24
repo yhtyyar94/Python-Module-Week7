@@ -12,6 +12,7 @@ if __name__ == "__main__":
     from interviews_menu_ui import Ui_MainWindow as InterviewsUI
     from user_menu_ui import Ui_MainWindow as UserUI
     from admin_control_menu_ui import Ui_MainWindow as AdminControlUI
+    from application_form_ui_ui import VITForm
 
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
@@ -23,6 +24,7 @@ if __name__ == "__main__":
     interviews_menu = InterviewsUI()
     user_menu = UserUI()
     admin_control_menu = AdminControlUI()
+    new_application_menu = VITForm()
 
     def admin_setup():
         admin_menu.setupUi(MainWindow)
@@ -59,7 +61,12 @@ if __name__ == "__main__":
         admin_control_menu.send_email.clicked.connect(admin_setup)
         admin_control_menu.exit.clicked.connect(MainWindow.close)
 
+    def new_application_setup():
+        new_application_menu.setupUi()
+        MainWindow.close()
+
     ui.login_button.clicked.connect(admin_setup)
+    ui.apply_button.clicked.connect(new_application_setup)
 
     MainWindow.show()
     sys.exit(app.exec())

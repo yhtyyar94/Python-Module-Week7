@@ -20,9 +20,9 @@ import sys
 class VITForm(QWidget):
     def __init__(self):
         super().__init__()
-        self.init_ui()
 
-    def init_ui(self):
+    def setupUi(self):
+
         self.window().setFixedSize(800, 600)
 
         # Form Layout

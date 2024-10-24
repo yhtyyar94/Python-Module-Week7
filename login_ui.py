@@ -14,6 +14,7 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
         MainWindow.setFixedSize(800, 600)
+        MainWindow.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.ArrowCursor))
         MainWindow.setStyleSheet("background-image: url(./assets/login.jpg);\n"
 "QWidget::setFixedSize(800, 600);\n"
 "\n"
@@ -96,13 +97,23 @@ class Ui_MainWindow(object):
 "font-weight:bold\n"
 "}")
         self.exit_button.setObjectName("exit_button")
-        self.label_4 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_4.setGeometry(QtCore.QRect(160, 330, 101, 61))
-        self.label_4.setStyleSheet("color:white;\n"
-"font-size:36px;\n"
+        self.apply_button = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.apply_button.setGeometry(QtCore.QRect(100, 340, 201, 41))
+        self.apply_button.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.apply_button.setStyleSheet("QPushButton::hover{\n"
+"color:white;\n"
+"background:#db1e3c;\n"
+"border-radius:10px;\n"
 "font-weight:bold;\n"
-"background:none")
-        self.label_4.setObjectName("label_4")
+"}\n"
+"\n"
+"QPushButton{\n"
+"color:#db1e3c;\n"
+"background:white;\n"
+"border-radius:10px;\n"
+"font-weight:bold\n"
+"}")
+        self.apply_button.setObjectName("apply_button")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -118,4 +129,4 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "Password"))
         self.login_button.setText(_translate("MainWindow", "Login"))
         self.exit_button.setText(_translate("MainWindow", "Exit"))
-        self.label_4.setText(_translate("MainWindow", "VIT 5"))
+        self.apply_button.setText(_translate("MainWindow", "Apply our next VIT course"))
