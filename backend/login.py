@@ -1,10 +1,9 @@
-from list_files import list_drive_files
-from download_file import download_file
-from read_xlsx import read_xlsx
-import main
+from backend.list_files import list_drive_files
+from backend.download_file import download_file
+from backend.read_xlsx import read_xlsx
 
 
-def login(username=main.ui.lineEdit.text(), password=main.ui.lineEdit.text(), login_window=main.ui, admin_window=main.admin_menu, user_window=main.user_menu, get_role=main.get_rol):
+def login(username, password, login_window, admin_window, user_window, get_role):
 
     items = list_drive_files()
     file_name = "Kullanicilar.xlsx"
@@ -17,7 +16,7 @@ def login(username=main.ui.lineEdit.text(), password=main.ui.lineEdit.text(), lo
             return False
     user_info_list = read_xlsx(file_name)
 
-    if len(user_info_list) is not None:
+    if len(user_info_list) != 0:
         for user in user_info_list:
             if username == user[0] and password == user[1]:
                 if user[2] == 'admin':

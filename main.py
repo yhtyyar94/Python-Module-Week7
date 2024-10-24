@@ -12,6 +12,7 @@ if __name__ == "__main__":
     from interviews_menu_ui import Ui_MainWindow as InterviewsUI
     from user_menu_ui import Ui_MainWindow as UserUI
     from admin_control_menu_ui import Ui_MainWindow as AdminControlUI
+    from backend.login import login
 
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
@@ -24,12 +25,11 @@ if __name__ == "__main__":
     user_menu = UserUI()
     admin_control_menu = AdminControlUI()
 
-    rol = ""
+    role = ""
 
-    def get_rol(user_rol):
-        global rol
-        rol = user_rol
-        return rol
+    def get_rol(user_role):
+        global role
+        role = user_role
 
     def admin_setup():
         admin_menu.setupUi(MainWindow)
@@ -66,8 +66,8 @@ if __name__ == "__main__":
         admin_control_menu.send_email.clicked.connect(admin_setup)
         admin_control_menu.exit.clicked.connect(MainWindow.close)
 
-    ui.pushButton.clicked.connect(admin_setup)
-
+    ui.pushButton.clicked.connect(lambda: login(
+        ui.lineEdit.text(), ui.lineEdit.text(), ui, admin_setup, user_setup, get_rol))
     ui.error_message.hide()
 
     MainWindow.show()

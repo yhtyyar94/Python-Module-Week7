@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file '/Users/yakupatas/Desktop/Werhere_Academy/VIT5_python_odevler/Python-Module-Week7/login.ui'
+# Form implementation generated from reading ui file '/Users/yhtyyar/Documents/GitHub/Python-Module-Week7/login.ui'
 #
 # Created by: PyQt6 UI code generator 6.7.1
 #
