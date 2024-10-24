@@ -1,7 +1,6 @@
 # from backend.list_files import list_drive_files
 # from backend.download_file import download_file
 from backend.login import login
-login()
 
 
 # file_lists = list_drive_files()

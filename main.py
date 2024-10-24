@@ -66,8 +66,10 @@ if __name__ == "__main__":
         admin_control_menu.send_email.clicked.connect(admin_setup)
         admin_control_menu.exit.clicked.connect(MainWindow.close)
 
+    ui.pushButton_2.clicked.connect(MainWindow.close)
+    ui.pushButton.clicked.connect(lambda: print("Button clicked!"))
     ui.pushButton.clicked.connect(lambda: login(
-        ui.lineEdit.text(), ui.lineEdit.text(), ui, admin_setup, user_setup, get_rol))
+        ui.lineEdit.text(), ui.lineEdit_2.text(), ui, admin_setup, user_setup, get_rol))
     ui.error_message.hide()
 
     MainWindow.show()
