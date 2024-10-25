@@ -19,7 +19,6 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = LoginUI()
-    ui.setupUi(MainWindow)
     admin_menu = AdminUI()
     applications_menu = ApplicationsUI()
     mentor_menu = MentorUI()
@@ -34,6 +33,21 @@ if __name__ == "__main__":
         global role
         role = user_role
 
+    def login_menu_setup():
+        ui.setupUi(MainWindow)
+        ui.login_button.clicked.connect(
+            lambda: login(
+                ui.lineEdit.text(),
+                ui.lineEdit_2.text(),
+                ui,
+                admin_setup,
+                user_setup,
+                get_role,
+            )
+        )
+        ui.exit_button.clicked.connect(MainWindow.close)
+        ui.apply_button.clicked.connect(new_application_setup)
+
     def admin_setup():
         admin_menu.setupUi(MainWindow)
         admin_menu.applications_Button.clicked.connect(applications_setup)
@@ -41,6 +55,7 @@ if __name__ == "__main__":
         admin_menu.interviews_Button.clicked.connect(interviews_menu_setup)
         admin_menu.Admin_menu_Button.clicked.connect(setup_admin_control_menu)
         admin_menu.exit_Button.clicked.connect(MainWindow.close)
+        admin_menu.main_menu.clicked.connect(login_menu_setup)
         admin_menu.applications_Button.clicked.connect(
             lambda: set_table_data(applications_menu, "Basvurular.xlsx")
         )
@@ -91,18 +106,6 @@ if __name__ == "__main__":
         new_application_menu.setupUi()
         MainWindow.close()
 
-    ui.login_button.clicked.connect(
-        lambda: login(
-            ui.lineEdit.text(),
-            ui.lineEdit_2.text(),
-            ui,
-            admin_setup,
-            user_setup,
-            get_role,
-        )
-    )
-    ui.apply_button.clicked.connect(new_application_setup)
-    ui.exit_button.clicked.connect(MainWindow.close)
-
+    login_menu_setup()
     MainWindow.show()
     sys.exit(app.exec())
