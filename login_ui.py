@@ -114,6 +114,15 @@ class Ui_MainWindow(object):
 "font-weight:bold\n"
 "}")
         self.apply_button.setObjectName("apply_button")
+        self.error_message = QtWidgets.QLabel(parent=self.centralwidget)
+        self.error_message.setGeometry(QtCore.QRect(180, 530, 421, 20))
+        self.error_message.setStyleSheet("color:red;\n"
+"font-weight:bold;\n"
+"font-size:18px;\n"
+"background:none")
+        self.error_message.setText("")
+        self.error_message.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.error_message.setObjectName("error_message")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)

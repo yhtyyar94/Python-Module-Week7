@@ -21,7 +21,6 @@ def login(username, password, login_window, admin_window, user_window, get_role)
     # Dosya bulunamadıysa işlemi sonlandır
     if not file_id:
         login_window.error_message.setText("Something went wrong!")
-        login_window.error_message.show()
         return False
 
     # Excel dosyasını oku
@@ -44,10 +43,9 @@ def login(username, password, login_window, admin_window, user_window, get_role)
             else:
 
                 login_window.error_message.setText("Invalid username or password!")
-                login_window.error_message.show()
+
     else:
         print("Hiçbir kullanıcı bulunamadı.")
         login_window.error_message.setText("No users found!")
-        login_window.error_message.show()
 
     return False  # Giriş başarısız
