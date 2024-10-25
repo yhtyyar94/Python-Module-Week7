@@ -40,7 +40,7 @@ class Ui_MainWindow(object):
 "}")
         self.activity_check.setObjectName("activity_check")
         self.exit = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.exit.setGeometry(QtCore.QRect(20, 410, 161, 41))
+        self.exit.setGeometry(QtCore.QRect(20, 490, 161, 41))
         self.exit.setStyleSheet("QPushButton{\n"
 "color:white;\n"
 "background:#47545a;\n"
@@ -73,6 +73,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(13)
         font.setBold(True)
+        font.setWeight(75)
         item.setFont(font)
         self.tableWidget.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
@@ -80,6 +81,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(13)
         font.setBold(True)
+        font.setWeight(75)
         item.setFont(font)
         self.tableWidget.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
@@ -87,6 +89,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(13)
         font.setBold(True)
+        font.setWeight(75)
         item.setFont(font)
         self.tableWidget.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
@@ -94,6 +97,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setPointSize(13)
         font.setBold(True)
+        font.setWeight(75)
         item.setFont(font)
         self.tableWidget.setHorizontalHeaderItem(3, item)
         self.tableWidget.horizontalHeader().setCascadingSectionResizes(False)
@@ -102,7 +106,7 @@ class Ui_MainWindow(object):
         self.tableWidget.verticalHeader().setDefaultSectionSize(35)
         self.tableWidget.verticalHeader().setMinimumSectionSize(21)
         self.send_email = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.send_email.setGeometry(QtCore.QRect(20, 250, 161, 41))
+        self.send_email.setGeometry(QtCore.QRect(20, 330, 161, 41))
         self.send_email.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
@@ -117,7 +121,7 @@ class Ui_MainWindow(object):
 "}")
         self.send_email.setObjectName("send_email")
         self.main_menu = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.main_menu.setGeometry(QtCore.QRect(20, 330, 161, 41))
+        self.main_menu.setGeometry(QtCore.QRect(20, 410, 161, 41))
         self.main_menu.setStyleSheet("QPushButton{\n"
 "color:black;\n"
 "background:white;\n"
@@ -131,6 +135,21 @@ class Ui_MainWindow(object):
 "font-weight:bold\n"
 "}")
         self.main_menu.setObjectName("main_menu")
+        self.create_user = QtWidgets.QPushButton(parent=self.centralwidget)
+        self.create_user.setGeometry(QtCore.QRect(20, 250, 161, 41))
+        self.create_user.setStyleSheet("QPushButton{\n"
+"color:black;\n"
+"background:white;\n"
+"border-radius:10px;\n"
+"font-weight:bold;\n"
+"}\n"
+"QPushButton::hover{\n"
+"color:white;\n"
+"background:#47545a;\n"
+"border-radius:10px;\n"
+"font-weight:bold\n"
+"}")
+        self.create_user.setObjectName("create_user")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -153,3 +172,4 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Oranizatör Email"))
         self.send_email.setText(_translate("MainWindow", "Send Email"))
         self.main_menu.setText(_translate("MainWindow", "Main Menu"))
+        self.create_user.setText(_translate("MainWindow", "Create User"))

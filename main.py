@@ -1,3 +1,5 @@
+from backend.fetch_candidate_emails import fetch_canditate_emails
+from backend.send_email import send_email
 from check_assets import check_asset_path_and_fix_size
 
 
@@ -15,6 +17,9 @@ if __name__ == "__main__":
     from application_form_ui_ui import VITForm
     from backend.login import login
     from backend.set_table_data import set_table_data
+    from send_email_form_ui import Ui_send_email_form
+    from create_user_ui import Ui_create_user
+    from backend.create_user import create_user
 
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
@@ -26,6 +31,8 @@ if __name__ == "__main__":
     user_menu = UserUI()
     admin_control_menu = AdminControlUI()
     new_application_menu = VITForm()
+    send_email_menu = Ui_send_email_form()
+    create_user_menu = Ui_create_user()
 
     role = ""
 
@@ -99,12 +106,45 @@ if __name__ == "__main__":
 
     def setup_admin_control_menu():
         admin_control_menu.setupUi(MainWindow)
-        admin_control_menu.send_email.clicked.connect(admin_setup)
+        admin_control_menu.main_menu.clicked.connect(admin_setup)
         admin_control_menu.exit.clicked.connect(MainWindow.close)
+        admin_control_menu.activity_check.clicked.connect(
+            lambda: set_table_data(admin_control_menu, "Etkinlikler.xlsx")
+        )
+        set_table_data(admin_control_menu, "Etkinlikler.xlsx")
+        admin_control_menu.send_email.clicked.connect(send_email_setup)
+        admin_control_menu.create_user.clicked.connect(create_user_setup)
 
     def new_application_setup():
         new_application_menu.setupUi()
         MainWindow.close()
+
+    def send_email_setup():
+        admin_control_menu.window = QtWidgets.QWidget()
+        admin_control_menu.ui = send_email_menu
+        admin_control_menu.ui.setupUi(admin_control_menu.window)
+        admin_control_menu.window.show()
+        fetch_canditate_emails(send_email_menu.candidate_names, send_email_menu.email)
+        send_email_menu.send_button.clicked.connect(
+            lambda: send_email(
+                send_email_menu.email.text(),
+                send_email_menu.textEdit.toPlainText(),
+                send_email_menu.subject_input.text(),
+            )
+        )
+
+    def create_user_setup():
+        admin_control_menu.window = QtWidgets.QWidget()
+        admin_control_menu.ui = create_user_menu
+        admin_control_menu.ui.setupUi(admin_control_menu.window)
+        admin_control_menu.window.show()
+        create_user_menu.create_button.clicked.connect(
+            lambda: create_user(
+                create_user_menu.username.text(),
+                create_user_menu.password.text(),
+                create_user_menu.role.currentText(),
+            )
+        )
 
     login_menu_setup()
     MainWindow.show()
