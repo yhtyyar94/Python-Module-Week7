@@ -32,8 +32,9 @@ def set_table_data(window, file_name):
     # Excel dosyasını oku
     file_data = read_xlsx(file_name)
     # Exel dosyasindaki bos hucreleri sil
-    clean_file_data = [list(filter(lambda cel: cel is not None, item))
-                       for item in file_data]
+    clean_file_data = [
+        list(filter(lambda cel: cel is not None, item)) for item in file_data
+    ]
     print(f"\n\033[95mTemizlenmis dosyamiz :\n\n {clean_file_data}\n")
 
     # Tabloyu oluşturuyoruz
@@ -45,19 +46,22 @@ def set_table_data(window, file_name):
     window.tableWidget.setHorizontalHeaderLabels(header_labels)
 
     # Tabloya veri ekliyoruz (başlık satırını atlayarak)
-    for row, rowData in enumerate(clean_file_data[1:], start=1):
+    for row, rowData in enumerate(clean_file_data[1:]):
         for column, item in enumerate(rowData):
             table_item = QtWidgets.QTableWidgetItem(str(item))
 
             # Metin hizalamasını ayarlıyoruz (hücreler için)
             table_item.setTextAlignment(
-                QtCore.Qt.AlignmentFlag.AlignLeading | QtCore.Qt.AlignmentFlag.AlignVCenter)
+                QtCore.Qt.AlignmentFlag.AlignLeading
+                | QtCore.Qt.AlignmentFlag.AlignVCenter
+            )
 
             window.tableWidget.setItem(row, column, table_item)
 
     # Tablo başlıklarını hizalıyoruz
     header = window.tableWidget.horizontalHeader()
     header.setDefaultAlignment(
-        QtCore.Qt.AlignmentFlag.AlignLeading | QtCore.Qt.AlignmentFlag.AlignVCenter)
+        QtCore.Qt.AlignmentFlag.AlignLeading | QtCore.Qt.AlignmentFlag.AlignVCenter
+    )
 
     print("\nTablo başarıyla dolduruldu.\n")
