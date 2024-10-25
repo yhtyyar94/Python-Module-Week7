@@ -1,7 +1,7 @@
 __pycache__/
 *.pyc
 *.pyo
-crm/
+path/*
 credentials.json
 token.json
 *.xlsx
