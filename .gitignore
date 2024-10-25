@@ -6,3 +6,4 @@ credentials.json
 token.json
 *.xlsx
 .venv/*
+.env
