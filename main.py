@@ -13,6 +13,7 @@ if __name__ == "__main__":
     from user_menu_ui import Ui_MainWindow as UserUI
     from admin_control_menu_ui import Ui_MainWindow as AdminControlUI
     from application_form_ui_ui import VITForm
+    from backend.login import login
 
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
@@ -25,6 +26,12 @@ if __name__ == "__main__":
     user_menu = UserUI()
     admin_control_menu = AdminControlUI()
     new_application_menu = VITForm()
+
+    role = ""
+
+    def get_role(user_role):
+        global role
+        role = user_role
 
     def admin_setup():
         admin_menu.setupUi(MainWindow)
@@ -65,7 +72,16 @@ if __name__ == "__main__":
         new_application_menu.setupUi()
         MainWindow.close()
 
-    ui.login_button.clicked.connect(admin_setup)
+    ui.login_button.clicked.connect(
+        lambda: login(
+            ui.lineEdit.text(),
+            ui.lineEdit_2.text(),
+            ui,
+            admin_setup,
+            user_setup,
+            get_role,
+        )
+    )
     ui.apply_button.clicked.connect(new_application_setup)
 
     MainWindow.show()
