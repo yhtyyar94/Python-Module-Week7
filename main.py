@@ -102,6 +102,7 @@ if __name__ == "__main__":
         )
     )
     ui.apply_button.clicked.connect(new_application_setup)
+    ui.exit_button.clicked.connect(MainWindow.close)
 
     MainWindow.show()
     sys.exit(app.exec())
