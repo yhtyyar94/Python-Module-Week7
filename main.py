@@ -14,6 +14,7 @@ if __name__ == "__main__":
     from admin_control_menu_ui import Ui_MainWindow as AdminControlUI
     from application_form_ui_ui import VITForm
     from backend.login import login
+    from backend.set_table_data import set_table_data
 
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
@@ -40,6 +41,15 @@ if __name__ == "__main__":
         admin_menu.interviews_Button.clicked.connect(interviews_menu_setup)
         admin_menu.Admin_menu_Button.clicked.connect(setup_admin_control_menu)
         admin_menu.exit_Button.clicked.connect(MainWindow.close)
+        admin_menu.applications_Button.clicked.connect(
+            lambda: set_table_data(applications_menu, "Basvurular.xlsx")
+        )
+        admin_menu.Mentor_interview_Button.clicked.connect(
+            lambda: set_table_data(mentor_menu, "Mentor.xlsx")
+        )
+        admin_menu.interviews_Button.clicked.connect(
+            lambda: set_table_data(interviews_menu, "Mulakatlar.xlsx")
+        )
 
     def applications_setup():
         applications_menu.setupUi(MainWindow)
@@ -62,6 +72,15 @@ if __name__ == "__main__":
         user_menu.mentor_interview_Button.clicked.connect(mentor_setup)
         user_menu.interviews_Button.clicked.connect(interviews_menu_setup)
         user_menu.exit_Button.clicked.connect(MainWindow.close)
+        user_menu.app_Button.clicked.connect(
+            lambda: set_table_data(applications_menu, "Basvurular.xlsx")
+        )
+        user_menu.mentor_interview_Button.clicked.connect(
+            lambda: set_table_data(mentor_menu, "Mentor.xlsx")
+        )
+        user_menu.interviews_Button.clicked.connect(
+            lambda: set_table_data(interviews_menu, "Mulakatlar.xlsx")
+        )
 
     def setup_admin_control_menu():
         admin_control_menu.setupUi(MainWindow)
