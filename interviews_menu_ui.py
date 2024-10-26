@@ -47,6 +47,26 @@ class Ui_MainWindow(object):
             "}"
         )
         self.exit_Button.setObjectName("exit_Button")
+        self.all_interviews = QtWidgets.QPushButton(self.centralwidget)
+        self.all_interviews.setGeometry(QtCore.QRect(20, 130, 150, 31))
+        font = QtGui.QFont()
+        font.setBold(True)
+        self.all_interviews.setFont(font)
+        self.all_interviews.setStyleSheet(
+            "QPushButton{\n"
+            "color:black;\n"
+            "background:white;\n"
+            "border-radius:10px;\n"
+            "font-weight:bold;\n"
+            "}\n"
+            "QPushButton::hover{\n"
+            "color:white;\n"
+            "background:#47545a;\n"
+            "border-radius:10px;\n"
+            "font-weight:bold\n"
+            "}"
+        )
+        self.all_interviews.setObjectName("all_interviews")
         self.project_send_Button = QtWidgets.QPushButton(self.centralwidget)
         self.project_send_Button.setGeometry(QtCore.QRect(290, 180, 241, 31))
         font = QtGui.QFont()
@@ -129,7 +149,7 @@ class Ui_MainWindow(object):
         )
         self.mainmenu_Button.setObjectName("mainmenu_Button")
         self.search_Line = QtWidgets.QLineEdit(self.centralwidget)
-        self.search_Line.setGeometry(QtCore.QRect(20, 130, 661, 31))
+        self.search_Line.setGeometry(QtCore.QRect(200, 130, 480, 31))
         self.search_Line.setStyleSheet(
             "QLineEdit{\n"
             "border-radius:10px;\n"
@@ -176,6 +196,7 @@ class Ui_MainWindow(object):
         self.project_send_Button.setText(
             _translate("MainWindow", "PROJECT SEND CANDIDATES")
         )
+        self.all_interviews.setText(_translate("MainWindow", "ALL INTERVIEWS"))
         self.search_Button.setText(_translate("MainWindow", "SEARCH"))
         self.project_submitted_Button.setText(
             _translate("MainWindow", "PROJECT SUBMITTED CANDIDATES")

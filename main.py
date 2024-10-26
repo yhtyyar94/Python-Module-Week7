@@ -123,6 +123,9 @@ if __name__ == "__main__":
                 interviews_menu,
             )
         )
+        interviews_menu.all_interviews.clicked.connect(
+            lambda: set_table_data(interviews_menu, "Mulakatlar.xlsx")
+        )
 
     def user_setup():
         user_menu.setupUi(MainWindow)

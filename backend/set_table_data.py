@@ -25,6 +25,7 @@ def set_table_data(window, file_name):
     # Excel dosyasını oku
     rows = read_xlsx(file_name)
     headers = [header for header in rows[0] if header is not None]
+    window.tableWidget.clear()
     window.tableWidget.setColumnCount(len(headers))
     window.tableWidget.setRowCount(len(rows) - 1)
 
