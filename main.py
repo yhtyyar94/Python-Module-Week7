@@ -21,6 +21,7 @@ if __name__ == "__main__":
     from send_email_form_ui import Ui_send_email_form
     from create_user_ui import Ui_create_user
     from backend.create_user import create_user
+    from backend.mentor_interview_page_filter import mentor_interview_page_filter
 
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
@@ -83,6 +84,23 @@ if __name__ == "__main__":
         mentor_menu.setupUi(MainWindow)
         mentor_menu.main_menu.clicked.connect(admin_setup)
         mentor_menu.exit_button.clicked.connect(MainWindow.close)
+        mentor_menu.filter_select_button.activated.connect(
+            lambda: mentor_interview_page_filter(
+                mentor_menu.filter_select_button,
+                None,
+                mentor_menu,
+            )
+        )
+        mentor_menu.all_meetings.clicked.connect(
+            lambda: set_table_data(mentor_menu, "Mentor.xlsx")
+        )
+        mentor_menu.search_button.clicked.connect(
+            lambda: mentor_interview_page_filter(
+                mentor_menu.filter_select_button,
+                mentor_menu.lineEdit.text(),
+                mentor_menu,
+            )
+        )
 
     def interviews_menu_setup():
         interviews_menu.setupUi(MainWindow)
