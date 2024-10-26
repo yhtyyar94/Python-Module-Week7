@@ -1,6 +1,6 @@
 from backend.fetch_candidate_emails import fetch_canditate_emails
 from backend.send_email import send_email
-from backend.interview_filter import interview_filter
+from backend.interview_filter import interviews_page_filter_function
 from check_assets import check_asset_path_and_fix_size
 
 
@@ -107,13 +107,20 @@ if __name__ == "__main__":
         interviews_menu.mainmenu_Button.clicked.connect(admin_setup)
         interviews_menu.exit_Button.clicked.connect(MainWindow.close)
         interviews_menu.project_send_Button.clicked.connect(
-            lambda: interview_filter(
-                filter_key="Projenin gelis tarihi", window=interviews_menu
+            lambda: interviews_page_filter_function(
+                "Projenin gelis tarihi", None, interviews_menu
             )
         )
         interviews_menu.project_submitted_Button.clicked.connect(
-            lambda: interview_filter(
-                filter_key="Proje gonderilis tarihi", window=interviews_menu
+            lambda: interviews_page_filter_function(
+                "Proje gonderilis tarihi", None, interviews_menu
+            )
+        )
+        interviews_menu.search_Button.clicked.connect(
+            lambda: interviews_page_filter_function(
+                None,
+                interviews_menu.search_Line.text(),
+                interviews_menu,
             )
         )
 
