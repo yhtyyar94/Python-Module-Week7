@@ -1,36 +1,50 @@
+from PyQt6 import QtWidgets, QtCore
 from backend.download_file import download_file
 from backend.list_files import list_drive_files
 from backend.read_xlsx import read_xlsx
-from PyQt6 import QtWidgets, QtCore
 
 
-def interview_filter(search=None, filter_key=None, window=None):
+def interviews_page_filter_function(project_type, search_text, interviews_window):
     file_name = "Mulakatlar.xlsx"
-    # Google Drive'daki dosyaları listele
     drive_files = list_drive_files()
 
     file_id = None
-    # Dosyaları kontrol et ve aradığımız dosyayı bul
+
     for file in drive_files:
-        print(f"\nFile: {file['name']} File id: {file['id']}")
         if file["name"] == file_name:
             file_id = file["id"]
             download_file(file_id)
             break
 
-    # Dosya bulunamadıysa işlemi sonlandır
     if not file_id:
         print("\nMaalesef dosya mevcut değil.\n")
         return False
 
-    # Excel dosyasını oku
     rows = read_xlsx(file_name)
 
     headers = [header for header in rows[0] if header is not None]
-    # first clear the table
-    window.tableWidget.clear()
-    window.tableWidget.setColumnCount(len(headers))
-    window.tableWidget.setRowCount(len(rows) - 1)
+
+    interviews_window.tableWidget.clear()
+    interviews_window.tableWidget.setColumnCount(len(headers))
+
+    if search_text:
+        rows = [
+            row
+            for row in rows
+            if search_text.lower() in " ".join([str(cell) for cell in row]).lower()
+        ]
+    else:
+        # if project_type is "Proje gonderilis tarihi" then row[1] should not be None. if project_type is "Projenin gelis tarihi" then row[2] should not be None.
+        rows = [
+            row
+            for row in rows
+            if project_type == "Proje gonderilis tarihi"
+            and row[1] is not None
+            or project_type == "Projenin gelis tarihi"
+            and row[2] is not None
+        ]
+
+    interviews_window.tableWidget.setRowCount(len(rows))
 
     for i, header in enumerate(headers):
         if header == "None" or header is None:
@@ -40,9 +54,9 @@ def interview_filter(search=None, filter_key=None, window=None):
             QtCore.Qt.AlignmentFlag.AlignLeading | QtCore.Qt.AlignmentFlag.AlignVCenter
         )
         item.setText(header)
-        window.tableWidget.setHorizontalHeaderItem(i, item)
+        interviews_window.tableWidget.setHorizontalHeaderItem(i, item)
 
-    for i in range(1, len(rows)):
+    for i in range(len(rows)):
         for j in range(len(headers)):
             if rows[i][j] is None:
                 continue
@@ -52,9 +66,4 @@ def interview_filter(search=None, filter_key=None, window=None):
                 | QtCore.Qt.AlignmentFlag.AlignVCenter
             )
             item.setText(str(rows[i][j]))
-            window.tableWidget.setItem(i - 1, j, item)
-    index = headers.index(filter_key)
-    # benim index'imdeki veri satirlarinda bosluk varsa onlari filtrele
-    for i in range(1, len(rows)):
-        if rows[i][index] is None:
-            window.tableWidget.hideRow(i - 1)
+            interviews_window.tableWidget.setItem(i, j, item)
