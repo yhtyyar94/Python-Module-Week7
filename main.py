@@ -88,11 +88,16 @@ if __name__ == "__main__":
         interviews_menu.setupUi(MainWindow)
         interviews_menu.mainmenu_Button.clicked.connect(admin_setup)
         interviews_menu.exit_Button.clicked.connect(MainWindow.close)
-        # interviews_menu.project_send_Button.clicked.connect(
-        #     lambda: interview_filter(
-        #         filter_key="Projenin gelis tarihi", window=interviews_menu
-        #     )
-        # )
+        interviews_menu.project_send_Button.clicked.connect(
+            lambda: interview_filter(
+                filter_key="Projenin gelis tarihi", window=interviews_menu
+            )
+        )
+        interviews_menu.project_submitted_Button.clicked.connect(
+            lambda: interview_filter(
+                filter_key="Proje gonderilis tarihi", window=interviews_menu
+            )
+        )
 
     def user_setup():
         user_menu.setupUi(MainWindow)

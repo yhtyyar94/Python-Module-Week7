@@ -23,35 +23,30 @@ def set_table_data(window, file_name):
         return False
 
     # Excel dosyasını oku
-    file_data = read_xlsx(file_name)
-    # Exel dosyasindaki bos hucreleri sil
-    clean_file_data = [
-        list(filter(lambda cel: cel is not None, item)) for item in file_data
-    ]
+    rows = read_xlsx(file_name)
+    print(rows)
+    headers = [header for header in rows[0] if header is not None]
+    window.tableWidget.setColumnCount(len(headers))
+    window.tableWidget.setRowCount(len(rows) - 1)
 
-    # Tabloyu oluşturuyoruz
-    window.tableWidget.setRowCount(len(clean_file_data) - 1)
-    window.tableWidget.setColumnCount(len(clean_file_data[0]))
+    for i, header in enumerate(headers):
+        if header == "None" or header is None:
+            continue
+        item = QtWidgets.QTableWidgetItem()
+        item.setTextAlignment(
+            QtCore.Qt.AlignmentFlag.AlignLeading | QtCore.Qt.AlignmentFlag.AlignVCenter
+        )
+        item.setText(header)
+        window.tableWidget.setHorizontalHeaderItem(i, item)
 
-    # Tabloya başlık ekleme (ilk satırı başlık olarak kullanıyoruz)
-    header_labels = clean_file_data[0]
-    window.tableWidget.setHorizontalHeaderLabels(header_labels)
-
-    # Tabloya veri ekliyoruz (başlık satırını atlayarak)
-    for row, rowData in enumerate(clean_file_data[1:]):
-        for column, item in enumerate(rowData):
-            table_item = QtWidgets.QTableWidgetItem(str(item))
-
-            # Metin hizalamasını ayarlıyoruz (hücreler için)
-            table_item.setTextAlignment(
+    for i in range(1, len(rows)):
+        for j in range(len(headers)):
+            if rows[i][j] is None:
+                continue
+            item = QtWidgets.QTableWidgetItem()
+            item.setTextAlignment(
                 QtCore.Qt.AlignmentFlag.AlignLeading
                 | QtCore.Qt.AlignmentFlag.AlignVCenter
             )
-
-            window.tableWidget.setItem(row, column, table_item)
-
-    # Tablo başlıklarını hizalıyoruz
-    header = window.tableWidget.horizontalHeader()
-    header.setDefaultAlignment(
-        QtCore.Qt.AlignmentFlag.AlignLeading | QtCore.Qt.AlignmentFlag.AlignVCenter
-    )
+            item.setText(str(rows[i][j]))
+            window.tableWidget.setItem(i - 1, j, item)
