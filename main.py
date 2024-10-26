@@ -1,5 +1,6 @@
 from backend.fetch_candidate_emails import fetch_canditate_emails
 from backend.send_email import send_email
+from backend.interview_filter import interview_filter
 from check_assets import check_asset_path_and_fix_size
 
 
@@ -87,6 +88,11 @@ if __name__ == "__main__":
         interviews_menu.setupUi(MainWindow)
         interviews_menu.mainmenu_Button.clicked.connect(admin_setup)
         interviews_menu.exit_Button.clicked.connect(MainWindow.close)
+        # interviews_menu.project_send_Button.clicked.connect(
+        #     lambda: interview_filter(
+        #         filter_key="Projenin gelis tarihi", window=interviews_menu
+        #     )
+        # )
 
     def user_setup():
         user_menu.setupUi(MainWindow)
