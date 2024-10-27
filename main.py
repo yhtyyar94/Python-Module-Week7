@@ -7,7 +7,7 @@ from check_assets import check_asset_path_and_fix_size
 if __name__ == "__main__":
     check_asset_path_and_fix_size()
     import sys
-    from PyQt6 import QtWidgets
+    from PyQt6 import QtWidgets, QtGui
     from login_ui import Ui_MainWindow as LoginUI
     from admin_menu_ui import Ui_MainWindow as AdminUI
     from application_menu_ui import Ui_MainWindow as ApplicationsUI
@@ -45,6 +45,26 @@ if __name__ == "__main__":
     def login_menu_setup():
         ui.setupUi(MainWindow)
         ui.login_button.clicked.connect(
+            lambda: login(
+                ui.lineEdit.text(),
+                ui.lineEdit_2.text(),
+                ui,
+                admin_setup,
+                user_setup,
+                get_role,
+            )
+        )
+        ui.lineEdit_2.returnPressed.connect(
+            lambda: login(
+                ui.lineEdit.text(),
+                ui.lineEdit_2.text(),
+                ui,
+                admin_setup,
+                user_setup,
+                get_role,
+            )
+        )
+        ui.lineEdit.returnPressed.connect(
             lambda: login(
                 ui.lineEdit.text(),
                 ui.lineEdit_2.text(),
