@@ -36,3 +36,4 @@ def download_file(file_id):
     # Save the file to the disk
     with open(f"{name}", "wb") as f:
         f.write(file.getvalue())
+

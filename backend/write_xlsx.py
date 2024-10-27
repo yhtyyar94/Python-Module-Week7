@@ -14,3 +14,4 @@ def write_xlsx(file_name, rows):
             sheet.cell(row=i + 1, column=j + 1, value=cell)
 
     workbook.save(file_name)
+
