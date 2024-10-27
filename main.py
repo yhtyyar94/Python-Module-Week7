@@ -5,7 +5,7 @@ from check_assets import check_asset_path_and_fix_size
 
 
 if __name__ == "__main__":
-    check_asset_path_and_fix_size()
+    #check_asset_path_and_fix_size()
     import sys
     from PyQt6 import QtWidgets, QtGui
     from login_ui import Ui_MainWindow as LoginUI
