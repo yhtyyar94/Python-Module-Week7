@@ -160,7 +160,7 @@ if __name__ == "__main__":
         admin_control_menu.create_user.clicked.connect(create_user_setup)
 
     def new_application_setup():
-        new_application_menu.setupUi()
+        new_application_menu.show()
         MainWindow.close()
 
     def send_email_setup():
