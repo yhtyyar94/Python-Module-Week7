@@ -85,23 +85,16 @@ if __name__ == "__main__":
         admin_menu.Admin_menu_Button.clicked.connect(setup_admin_control_menu)
         admin_menu.exit_Button.clicked.connect(MainWindow.close)
         admin_menu.main_menu.clicked.connect(login_menu_setup)
-        admin_menu.applications_Button.clicked.connect(
-            lambda: set_table_data(applications_menu, "Basvurular.xlsx")
-        )
-        admin_menu.Mentor_interview_Button.clicked.connect(
-            lambda: set_table_data(mentor_menu, "Mentor.xlsx")
-        )
-        admin_menu.interviews_Button.clicked.connect(
-            lambda: set_table_data(interviews_menu, "Mulakatlar.xlsx")
-        )
 
     def applications_setup():
         applications_menu.setupUi(MainWindow)
+        set_table_data(applications_menu, "Basvurular.xlsx")
         applications_menu.main_menu.clicked.connect(admin_setup)
         applications_menu.exit.clicked.connect(MainWindow.close)
 
     def mentor_setup():
         mentor_menu.setupUi(MainWindow)
+        set_table_data(mentor_menu, "Mentor.xlsx")
         mentor_menu.main_menu.clicked.connect(admin_setup)
         mentor_menu.exit_button.clicked.connect(MainWindow.close)
         mentor_menu.filter_select_button.activated.connect(
@@ -124,6 +117,7 @@ if __name__ == "__main__":
 
     def interviews_menu_setup():
         interviews_menu.setupUi(MainWindow)
+        set_table_data(interviews_menu, "Mulakatlar.xlsx")
         interviews_menu.mainmenu_Button.clicked.connect(admin_setup)
         interviews_menu.exit_Button.clicked.connect(MainWindow.close)
         interviews_menu.project_send_Button.clicked.connect(
@@ -153,15 +147,6 @@ if __name__ == "__main__":
         user_menu.mentor_interview_Button.clicked.connect(mentor_setup)
         user_menu.interviews_Button.clicked.connect(interviews_menu_setup)
         user_menu.exit_Button.clicked.connect(MainWindow.close)
-        user_menu.app_Button.clicked.connect(
-            lambda: set_table_data(applications_menu, "Basvurular.xlsx")
-        )
-        user_menu.mentor_interview_Button.clicked.connect(
-            lambda: set_table_data(mentor_menu, "Mentor.xlsx")
-        )
-        user_menu.interviews_Button.clicked.connect(
-            lambda: set_table_data(interviews_menu, "Mulakatlar.xlsx")
-        )
 
     def setup_admin_control_menu():
         admin_control_menu.setupUi(MainWindow)
