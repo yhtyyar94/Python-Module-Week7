@@ -5,7 +5,7 @@ from check_assets import check_asset_path_and_fix_size
 
 
 if __name__ == "__main__":
-    #check_asset_path_and_fix_size()
+    # check_asset_path_and_fix_size()
     import sys
     from PyQt6 import QtWidgets, QtGui
     from login_ui import Ui_MainWindow as LoginUI
@@ -22,6 +22,7 @@ if __name__ == "__main__":
     from create_user_ui import Ui_create_user
     from backend.create_user import create_user
     from backend.mentor_interview_page_filter import mentor_interview_page_filter
+    from backend.app_page_filter import app_page_filter
 
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
@@ -91,6 +92,48 @@ if __name__ == "__main__":
         set_table_data(applications_menu, "Basvurular.xlsx")
         applications_menu.main_menu.clicked.connect(admin_setup)
         applications_menu.exit.clicked.connect(MainWindow.close)
+        applications_menu.search.clicked.connect(
+            lambda: app_page_filter(
+                applications_menu.lineEdit.text(),
+                applications_menu, None
+            )
+        )
+        applications_menu.assigned_mentor_interviews.clicked.connect(  # Mentor atananlar
+            lambda: app_page_filter(
+                None,
+                applications_menu, "OK"
+            )
+        )
+        applications_menu.unassigned_mentor_interviews.clicked.connect(  # Mentor atananmamis olanlar
+            lambda: app_page_filter(
+                None,
+                applications_menu, "ATANMADI"
+            )
+        )
+        applications_menu.all_applications.clicked.connect(  # Butun basvurular
+            lambda: app_page_filter(
+                None,
+                applications_menu, None
+            )
+        )
+
+        applications_menu.prev_vit_check.clicked.connect(  # Onceki VIT versiyonlarini leri goruntule.
+            lambda: app_page_filter(
+                None, applications_menu, "VIT3"
+            )
+        )
+        applications_menu.filtered_applications.clicked.connect(  # her ismi birkez yaz.
+            lambda: app_page_filter(
+                None,
+                applications_menu, "UNDUPLICATE"
+            )
+        )
+        applications_menu.duplicate_application.clicked.connect(  # Mekerrer OLANLAR.
+            lambda: app_page_filter(
+                None,
+                applications_menu, "DUPLICATE"
+            )
+        )
 
     def mentor_setup():
         mentor_menu.setupUi(MainWindow)
@@ -168,7 +211,8 @@ if __name__ == "__main__":
         admin_control_menu.ui = send_email_menu
         admin_control_menu.ui.setupUi(admin_control_menu.window)
         admin_control_menu.window.show()
-        fetch_canditate_emails(send_email_menu.candidate_names, send_email_menu.email)
+        fetch_canditate_emails(
+            send_email_menu.candidate_names, send_email_menu.email)
         send_email_menu.send_button.clicked.connect(
             lambda: send_email(
                 send_email_menu.email.text(),
