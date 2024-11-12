@@ -17,3 +17,7 @@ def read_xlsx(file_name):
         rows.append(row)
     rows = [list(row) for row in rows]
     return rows
+
+
+if __name__ == "__main__":
+    print(read_xlsx("Basvurular.xlsx"))
