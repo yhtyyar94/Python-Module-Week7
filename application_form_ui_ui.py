@@ -261,56 +261,6 @@ class VITForm(QWidget):
         self.submit_form(form_data)
 
     def submit_form(self, form_data):
-        # try:
-        #     file_name = "Basvurular.xlsx"
-        #     drive_files = list_drive_files()
-        #     file_id = None
-
-        #     # Google Drive'dan dosya ID'sini al ve indir
-        #     for file in drive_files:
-        #         if file["name"] == file_name:
-        #             file_id = file["id"]
-        #             download_file(file_id)
-        #             break
-
-        #     if file_id is None:
-        #         QMessageBox.critical(self, "Hata", "Excel dosyası bulunamadı.")
-        #         return
-
-        #     # Excel dosyasını aç
-        #     workbook = load_workbook(filename=file_name)
-        #     sheet = workbook.active
-
-        #     # Son dolu satırı bul ve altına yeni satırı ekle
-        #     new_row_index = sheet.max_row + 1
-        #     for row in range(1, sheet.max_row + 1):
-        #         if not any(
-        #             sheet.cell(row=row, column=col).value
-        #             for col in range(1, sheet.max_column + 1)
-        #         ):
-        #             new_row_index = row
-        #             break
-
-        #     for col_index, value in enumerate(form_data, start=1):
-        #         sheet.cell(row=new_row_index, column=col_index, value=value)
-
-        #     workbook.save(file_name)
-
-        #     # Dosyayı Google Drive'a geri yükle
-        #     uploaded_file = update_file(file_id, file_name)
-        #     if uploaded_file:
-        #         QMessageBox.information(
-        #             self, "Başarılı", "Veriler başarıyla kaydedildi ve yüklendi."
-        #         )
-        #     else:
-        #         QMessageBox.critical(
-        #             self, "Hata", "Excel dosyasını yükleme sırasında bir hata oluştu."
-        #         )
-        # except Exception as e:
-        #     QMessageBox.critical(
-        #         self, "Hata", f"Excel dosyasına kaydetme sırasında bir hata oluştu: {e}"
-        #     )
-
         try:
             email_body = f"""
             Merhabalar,
