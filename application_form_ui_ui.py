@@ -312,46 +312,41 @@ class VITForm(QWidget):
         #     )
 
         try:
-            # email_body = f"""
-            # Merhabalar,
+            email_body = f"""
+            Merhabalar,
 
-            # Aşağıdaki bilgilerle Vit projesine kayıt oldunuz:
+            Aşağıdaki bilgilerle Vit projesine kayıt oldunuz:
 
-            # Zaman Damgası: {form_data[0]}
-            # Adınız Soyadınız: {form_data[1]}
-            # Email Adresiniz: {form_data[2]}
-            # Telefon Numaranız: {form_data[3]}
-            # Posta Kodunuz: {form_data[4]}
-            # Yaşadığınız Eyalet: {form_data[5]}
-            # Ekonomik Durumunuz: {form_data[6]}
-            # Dil Kursuna Devam: {form_data[7]}
-            # Dil Seviyesi: {form_data[8]}
-            # IT Kursu: {form_data[9]}
-            # IT Deneyimi: {form_data[10]}
-            # Katıldığı Proje: {form_data[11]}
-            # Tercih Edilen Sektör: {form_data[12]}
-            # Motivasyon: {form_data[13]}
-            # """
+            Zaman Damgası: {form_data[0]}
+            Adınız Soyadınız: {form_data[1]}
+            Email Adresiniz: {form_data[2]}
+            Telefon Numaranız: {form_data[3]}
+            Posta Kodunuz: {form_data[4]}
+            Yaşadığınız Eyalet: {form_data[5]}
+            Ekonomik Durumunuz: {form_data[6]}
+            Dil Kursuna Devam: {form_data[7]}
+            Dil Seviyesi: {form_data[8]}
+            IT Kursu: {form_data[9]}
+            IT Deneyimi: {form_data[10]}
+            Katıldığı Proje: {form_data[11]}
+            Tercih Edilen Sektör: {form_data[12]}
+            Motivasyon: {form_data[13]}
+            """
 
-            # send_email(form_data[2], email_body, "VIT Projesi Başvurunuz Hk.")
-            # send_email("vit5crmproject@gmail.com", email_body, "Yeni Başvuru")
+            send_email(form_data[2], email_body, "VIT Projesi Başvurunuz Hk.")
+            send_email("vit5crmproject@gmail.com", email_body, "Yeni Başvuru")
 
             # send the data to database
-            print(len(form_data))
             conn = connect("crm")
             cur = conn.cursor()
             cur.execute("Select * from applications LIMIT 1")
             headers = [desc[0] for desc in cur.description]
             columns = ", ".join([f'"{header}"' for header in headers[1:]])
-            print(len(headers))
-            placeholders = ", ".join(["%s"] * len(headers))
+            placeholders = ", ".join(["%s"] * len(headers[1:]))
             insert_query = (
                 f"INSERT INTO applications ({columns}) VALUES ({placeholders})"
             )
             cur.execute(insert_query, form_data)
-            # cur.execute(
-            #     f'INSERT INTO "applications" ("Zaman damgası","Adınız Soyadınız","Mail adresiniz","Telefon Numaranız","Posta Kodunuz","Yaşadığınız Eyalet","Ekonomik Durumunuz","Dil kursuna devam ediyor musunuz?","Yabancı dil Seviyeniz","Başka bir IT kursu (Bootcamp) bitirdiniz mi?","Daha önce herhangi bir IT iş tecrübeniz var mı?","Şu anda herhangi bir projeye dahil misiniz?","IT sektöründe hangi bölüm(ler)de çalışmak istiyorsunuz?","Neden VIT projesine katılmak istiyorsunuz?","Mentor gorusmesi","Basvuru Donemi") VALUES ({form_data[0]},{form_data[1]},{form_data[2]},{form_data[3]},{form_data[4]},{form_data[5]},{form_data[6]},{form_data[7]},{form_data[8]},{form_data[9]},{form_data[10]},{form_data[11]},{form_data[12]},{form_data[13]},{form_data[14]},{form_data[15]})'
-            # )
             conn.commit()
             cur.close()
             conn.close()
