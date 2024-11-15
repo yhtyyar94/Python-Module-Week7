@@ -13,7 +13,7 @@ def create_database_if_not_exists(dbname):
 
     if not exists:
         # Create the database
-        cur.execute(("CREATE DATABASE {}").format(sql.Identifier(dbname)))
+        cur.execute("CREATE DATABASE {}".format(dbname))
         print(f"Database '{dbname}' created successfully.")
     else:
         print(f"Database '{dbname}' already exists.")
@@ -25,4 +25,4 @@ def create_database_if_not_exists(dbname):
 
 if __name__ == "__main__":
     # Example usage
-    create_database_if_not_exists("dvdrental")
+    create_database_if_not_exists("crm")

@@ -1,37 +1,27 @@
-from backend.list_files import list_drive_files
-from backend.download_file import download_file
-from backend.read_xlsx import read_xlsx
+from db_controllers.fetch_data import fetch_data
 from PyQt6 import QtWidgets, QtCore
 
 
-def set_table_data(window, file_name):
-    # Google Drive'daki dosyaları listele
-    drive_files = list_drive_files()
+def set_table_data(window, db_name, table_name):
+    # Define the query to fetch data from the specified table
+    query = f'SELECT * FROM "{table_name}"'
 
-    file_id = None
-    # Dosyaları kontrol et ve aradığımız dosyayı bul
-    for file in drive_files:
-        print(f"\nFile: {file['name']} File id: {file['id']}")
-        if file["name"] == file_name:
-            file_id = file["id"]
-            download_file(file_id)
-            break
+    # Fetch data from the database
+    headers, rows = fetch_data(db_name, query)
+    print("Headers:", headers)
+    print("Rows:", rows)
 
-    # Dosya bulunamadıysa işlemi sonlandır
-    if not file_id:
-        print("\nMaalesef dosya mevcut değil.\n")
+    if not rows:
+        print(f"No data found in the table: {table_name}")
         return False
 
-    # Excel dosyasını oku
-    rows = read_xlsx(file_name)
-    headers = [header for header in rows[0] if header is not None]
+    # Clear the table widget and set the number of columns and rows
     window.tableWidget.clear()
     window.tableWidget.setColumnCount(len(headers))
-    window.tableWidget.setRowCount(len(rows) - 1)
+    window.tableWidget.setRowCount(len(rows))
 
+    # Set the headers
     for i, header in enumerate(headers):
-        if header == "None" or header is None:
-            continue
         item = QtWidgets.QTableWidgetItem()
         item.setTextAlignment(
             QtCore.Qt.AlignmentFlag.AlignLeading | QtCore.Qt.AlignmentFlag.AlignVCenter
@@ -39,14 +29,10 @@ def set_table_data(window, file_name):
         item.setText(header)
         window.tableWidget.setHorizontalHeaderItem(i, item)
 
-    for i in range(1, len(rows)):
-        for j in range(len(headers)):
-            if rows[i][j] is None:
-                continue
-            item = QtWidgets.QTableWidgetItem()
-            item.setTextAlignment(
-                QtCore.Qt.AlignmentFlag.AlignLeading
-                | QtCore.Qt.AlignmentFlag.AlignVCenter
-            )
-            item.setText(str(rows[i][j]))
-            window.tableWidget.setItem(i - 1, j, item)
+    # Populate the table with data
+    for row_idx, row in enumerate(rows):
+        for col_idx, cell in enumerate(row):
+            item = QtWidgets.QTableWidgetItem(str(cell))
+            window.tableWidget.setItem(row_idx, col_idx, item)
+
+    print(f"Data from table '{table_name}' loaded successfully.")

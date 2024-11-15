@@ -89,56 +89,42 @@ if __name__ == "__main__":
 
     def applications_setup():
         applications_menu.setupUi(MainWindow)
-        set_table_data(applications_menu, "Basvurular.xlsx")
-        applications_menu.main_menu.clicked.connect(admin_setup)
+        set_table_data(applications_menu, "crm", "applications")
+        applications_menu.main_menu.clicked.connect(
+            (lambda: admin_setup if role == "admin" else user_setup)()
+        )
         applications_menu.exit.clicked.connect(MainWindow.close)
         applications_menu.search.clicked.connect(
             lambda: app_page_filter(
-                applications_menu.lineEdit.text(),
-                applications_menu, None
+                applications_menu.lineEdit.text(), applications_menu, None
             )
         )
         applications_menu.assigned_mentor_interviews.clicked.connect(  # Mentor atananlar
-            lambda: app_page_filter(
-                None,
-                applications_menu, "OK"
-            )
+            lambda: app_page_filter(None, applications_menu, "OK")
         )
         applications_menu.unassigned_mentor_interviews.clicked.connect(  # Mentor atananmamis olanlar
-            lambda: app_page_filter(
-                None,
-                applications_menu, "ATANMADI"
-            )
+            lambda: app_page_filter(None, applications_menu, "ATANMADI")
         )
         applications_menu.all_applications.clicked.connect(  # Butun basvurular
-            lambda: app_page_filter(
-                None,
-                applications_menu, None
-            )
+            lambda: app_page_filter(None, applications_menu, None)
         )
 
         applications_menu.prev_vit_check.clicked.connect(  # Onceki VIT versiyonlarini leri goruntule.
-            lambda: app_page_filter(
-                None, applications_menu, "VIT3"
-            )
+            lambda: app_page_filter(None, applications_menu, "VIT3")
         )
         applications_menu.filtered_applications.clicked.connect(  # her ismi birkez yaz.
-            lambda: app_page_filter(
-                None,
-                applications_menu, "UNDUPLICATE"
-            )
+            lambda: app_page_filter(None, applications_menu, "UNDUPLICATE")
         )
         applications_menu.duplicate_application.clicked.connect(  # Mekerrer OLANLAR.
-            lambda: app_page_filter(
-                None,
-                applications_menu, "DUPLICATE"
-            )
+            lambda: app_page_filter(None, applications_menu, "DUPLICATE")
         )
 
     def mentor_setup():
         mentor_menu.setupUi(MainWindow)
-        set_table_data(mentor_menu, "Mentor.xlsx")
-        mentor_menu.main_menu.clicked.connect(admin_setup)
+        set_table_data(mentor_menu, "crm", "mentors")
+        mentor_menu.main_menu.clicked.connect(
+            (lambda: admin_setup if role == "admin" else user_setup)()
+        )
         mentor_menu.exit_button.clicked.connect(MainWindow.close)
         mentor_menu.filter_select_button.activated.connect(
             lambda: mentor_interview_page_filter(
@@ -148,11 +134,11 @@ if __name__ == "__main__":
             )
         )
         mentor_menu.all_meetings.clicked.connect(
-            lambda: set_table_data(mentor_menu, "Mentor.xlsx")
+            lambda: set_table_data(mentor_menu, "crm", "mentors")
         )
         mentor_menu.search_button.clicked.connect(
             lambda: mentor_interview_page_filter(
-                mentor_menu.filter_select_button,
+                None,
                 mentor_menu.lineEdit.text(),
                 mentor_menu,
             )
@@ -160,8 +146,10 @@ if __name__ == "__main__":
 
     def interviews_menu_setup():
         interviews_menu.setupUi(MainWindow)
-        set_table_data(interviews_menu, "Mulakatlar.xlsx")
-        interviews_menu.mainmenu_Button.clicked.connect(admin_setup)
+        set_table_data(interviews_menu, "crm", "interviews")
+        interviews_menu.mainmenu_Button.clicked.connect(
+            (lambda: admin_setup if role == "admin" else user_setup)()
+        )
         interviews_menu.exit_Button.clicked.connect(MainWindow.close)
         interviews_menu.project_send_Button.clicked.connect(
             lambda: interviews_page_filter_function(
@@ -181,7 +169,7 @@ if __name__ == "__main__":
             )
         )
         interviews_menu.all_interviews.clicked.connect(
-            lambda: set_table_data(interviews_menu, "Mulakatlar.xlsx")
+            lambda: set_table_data(interviews_menu, "crm", "interviews")
         )
 
     def user_setup():
@@ -196,9 +184,9 @@ if __name__ == "__main__":
         admin_control_menu.main_menu.clicked.connect(admin_setup)
         admin_control_menu.exit.clicked.connect(MainWindow.close)
         admin_control_menu.activity_check.clicked.connect(
-            lambda: set_table_data(admin_control_menu, "Etkinlikler.xlsx")
+            lambda: set_table_data(admin_control_menu, "crm", "activities")
         )
-        set_table_data(admin_control_menu, "Etkinlikler.xlsx")
+        set_table_data(admin_control_menu, "crm", "activities")
         admin_control_menu.send_email.clicked.connect(send_email_setup)
         admin_control_menu.create_user.clicked.connect(create_user_setup)
 
@@ -211,8 +199,7 @@ if __name__ == "__main__":
         admin_control_menu.ui = send_email_menu
         admin_control_menu.ui.setupUi(admin_control_menu.window)
         admin_control_menu.window.show()
-        fetch_canditate_emails(
-            send_email_menu.candidate_names, send_email_menu.email)
+        fetch_canditate_emails(send_email_menu.candidate_names, send_email_menu.email)
         send_email_menu.send_button.clicked.connect(
             lambda: send_email(
                 send_email_menu.email.text(),

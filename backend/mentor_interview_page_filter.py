@@ -1,40 +1,36 @@
 from PyQt6 import QtWidgets, QtCore
-from backend.download_file import download_file
-from backend.list_files import list_drive_files
-from backend.read_xlsx import read_xlsx
+from db_controllers.fetch_data import fetch_data
 
 
 def mentor_interview_page_filter(comboBox, search_text, mentor_interview_window):
-    file_name = "Mentor.xlsx"
-    drive_files = list_drive_files()
+    # Mentor columns: Tarih	Sınıf	İsim Soyisim	Mentör	Mentör Tavsiyesi	Açıklama
 
-    file_id = None
+    if comboBox:
+        query = f"""
+        SELECT * FROM mentors
+        WHERE "Mentör Tavsiyesi" ILIKE '%{comboBox.currentText()}%'
+        """
+    elif search_text:
+        query = f"""
+        SELECT * FROM mentors
+        WHERE "İsim Soyisim" ILIKE '%{search_text}%' or "Mentör" ILIKE '%{search_text}%' or "Sınıf" ILIKE '%{search_text}%' or "Mentör Tavsiyesi" ILIKE '%{search_text}%' or "Açıklama" ILIKE '%{search_text}%'
+        """
+    else:
+        query = f"""
+        SELECT * FROM mentors
+        """
 
-    for file in drive_files:
-        if file["name"] == file_name:
-            file_id = file["id"]
-            download_file(file_id)
-            break
+    # Fetch data from the database
+    headers, rows = fetch_data("crm", query)
+    print("Headers:", headers)
+    print("Rows:", rows)
 
-    if not file_id:
-        print("\nMaalesef dosya mevcut değil.\n")
+    if not rows:
+        print("No data found in the table: applications")
         return False
-
-    rows = read_xlsx(file_name)
-
-    headers = [header for header in rows[0] if header is not None]
 
     mentor_interview_window.tableWidget.clear()
     mentor_interview_window.tableWidget.setColumnCount(len(headers))
-
-    if search_text:
-        rows = [
-            row
-            for row in rows
-            if search_text.lower() in " ".join([str(cell) for cell in row]).lower()
-        ]
-    else:
-        rows = [row for row in rows if comboBox.currentText() == row[4]]
 
     mentor_interview_window.tableWidget.setRowCount(len(rows))
 

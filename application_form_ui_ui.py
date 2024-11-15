@@ -21,6 +21,7 @@ from backend.download_file import download_file
 from backend.upload_file import update_file
 from openpyxl import load_workbook
 import datetime
+from db_controllers.connect import connect
 
 
 class VITForm(QWidget):
@@ -205,20 +206,20 @@ class VITForm(QWidget):
     def confirm_submission(self):
         form_data = [
             datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-            self.name_input.text().strip() or "Boş",
-            self.email_input.text().strip() or "Boş",
-            self.phone_input.text().strip() or "Boş",
-            self.postcode_input.text().strip() or "Boş",
-            self.state_combo.currentText().strip() or "Boş",
+            self.name_input.text().strip() or "",
+            self.email_input.text().strip() or "",
+            self.phone_input.text().strip() or "",
+            self.postcode_input.text().strip() or "",
+            self.state_combo.currentText().strip() or "",
             (
                 self.economic_status_group.checkedButton().text()
                 if self.economic_status_group.checkedButton()
-                else "Boş"
+                else ""
             ),
             (
                 "Evet"
                 if self.course_yes.isChecked()
-                else ("Hayır" if self.course_no.isChecked() else "Boş")
+                else ("Hayır" if self.course_no.isChecked() else "")
             ),
             ", ".join(
                 [
@@ -232,10 +233,10 @@ class VITForm(QWidget):
                     if checkbox.isChecked()
                 ]
             )
-            or "Boş",
-            self.it_course_input.toPlainText().strip() or "Boş",
-            self.it_experience_input.toPlainText().strip() or "Boş",
-            self.project_input.toPlainText().strip() or "Boş",
+            or "",
+            self.it_course_input.toPlainText().strip() or "",
+            self.it_experience_input.toPlainText().strip() or "",
+            self.project_input.toPlainText().strip() or "",
             ", ".join(
                 [
                     checkbox.text()
@@ -252,92 +253,116 @@ class VITForm(QWidget):
                     if checkbox.isChecked()
                 ]
             )
-            or "Boş",
-            self.motivation_input.toPlainText().strip() or "Boş",
+            or "",
+            self.motivation_input.toPlainText().strip() or "",
+            "ATANMADI",
+            "VIT5",
         ]
         self.submit_form(form_data)
 
     def submit_form(self, form_data):
+        # try:
+        #     file_name = "Basvurular.xlsx"
+        #     drive_files = list_drive_files()
+        #     file_id = None
+
+        #     # Google Drive'dan dosya ID'sini al ve indir
+        #     for file in drive_files:
+        #         if file["name"] == file_name:
+        #             file_id = file["id"]
+        #             download_file(file_id)
+        #             break
+
+        #     if file_id is None:
+        #         QMessageBox.critical(self, "Hata", "Excel dosyası bulunamadı.")
+        #         return
+
+        #     # Excel dosyasını aç
+        #     workbook = load_workbook(filename=file_name)
+        #     sheet = workbook.active
+
+        #     # Son dolu satırı bul ve altına yeni satırı ekle
+        #     new_row_index = sheet.max_row + 1
+        #     for row in range(1, sheet.max_row + 1):
+        #         if not any(
+        #             sheet.cell(row=row, column=col).value
+        #             for col in range(1, sheet.max_column + 1)
+        #         ):
+        #             new_row_index = row
+        #             break
+
+        #     for col_index, value in enumerate(form_data, start=1):
+        #         sheet.cell(row=new_row_index, column=col_index, value=value)
+
+        #     workbook.save(file_name)
+
+        #     # Dosyayı Google Drive'a geri yükle
+        #     uploaded_file = update_file(file_id, file_name)
+        #     if uploaded_file:
+        #         QMessageBox.information(
+        #             self, "Başarılı", "Veriler başarıyla kaydedildi ve yüklendi."
+        #         )
+        #     else:
+        #         QMessageBox.critical(
+        #             self, "Hata", "Excel dosyasını yükleme sırasında bir hata oluştu."
+        #         )
+        # except Exception as e:
+        #     QMessageBox.critical(
+        #         self, "Hata", f"Excel dosyasına kaydetme sırasında bir hata oluştu: {e}"
+        #     )
+
         try:
-            file_name = "Basvurular.xlsx"
-            drive_files = list_drive_files()
-            file_id = None
+            # email_body = f"""
+            # Merhabalar,
 
-            # Google Drive'dan dosya ID'sini al ve indir
-            for file in drive_files:
-                if file["name"] == file_name:
-                    file_id = file["id"]
-                    download_file(file_id)
-                    break
+            # Aşağıdaki bilgilerle Vit projesine kayıt oldunuz:
 
-            if file_id is None:
-                QMessageBox.critical(self, "Hata", "Excel dosyası bulunamadı.")
-                return
+            # Zaman Damgası: {form_data[0]}
+            # Adınız Soyadınız: {form_data[1]}
+            # Email Adresiniz: {form_data[2]}
+            # Telefon Numaranız: {form_data[3]}
+            # Posta Kodunuz: {form_data[4]}
+            # Yaşadığınız Eyalet: {form_data[5]}
+            # Ekonomik Durumunuz: {form_data[6]}
+            # Dil Kursuna Devam: {form_data[7]}
+            # Dil Seviyesi: {form_data[8]}
+            # IT Kursu: {form_data[9]}
+            # IT Deneyimi: {form_data[10]}
+            # Katıldığı Proje: {form_data[11]}
+            # Tercih Edilen Sektör: {form_data[12]}
+            # Motivasyon: {form_data[13]}
+            # """
 
-            # Excel dosyasını aç
-            workbook = load_workbook(filename=file_name)
-            sheet = workbook.active
+            # send_email(form_data[2], email_body, "VIT Projesi Başvurunuz Hk.")
+            # send_email("vit5crmproject@gmail.com", email_body, "Yeni Başvuru")
 
-            # Son dolu satırı bul ve altına yeni satırı ekle
-            new_row_index = sheet.max_row + 1
-            for row in range(1, sheet.max_row + 1):
-                if not any(
-                    sheet.cell(row=row, column=col).value
-                    for col in range(1, sheet.max_column + 1)
-                ):
-                    new_row_index = row
-                    break
-
-            for col_index, value in enumerate(form_data, start=1):
-                sheet.cell(row=new_row_index, column=col_index, value=value)
-
-            workbook.save(file_name)
-
-            # Dosyayı Google Drive'a geri yükle
-            uploaded_file = update_file(file_id, file_name)
-            if uploaded_file:
-                QMessageBox.information(
-                    self, "Başarılı", "Veriler başarıyla kaydedildi ve yüklendi."
-                )
-            else:
-                QMessageBox.critical(
-                    self, "Hata", "Excel dosyasını yükleme sırasında bir hata oluştu."
-                )
-        except Exception as e:
-            QMessageBox.critical(
-                self, "Hata", f"Excel dosyasına kaydetme sırasında bir hata oluştu: {e}"
+            # send the data to database
+            print(len(form_data))
+            conn = connect("crm")
+            cur = conn.cursor()
+            cur.execute("Select * from applications LIMIT 1")
+            headers = [desc[0] for desc in cur.description]
+            columns = ", ".join([f'"{header}"' for header in headers[1:]])
+            print(len(headers))
+            placeholders = ", ".join(["%s"] * len(headers))
+            insert_query = (
+                f"INSERT INTO applications ({columns}) VALUES ({placeholders})"
             )
+            cur.execute(insert_query, form_data)
+            # cur.execute(
+            #     f'INSERT INTO "applications" ("Zaman damgası","Adınız Soyadınız","Mail adresiniz","Telefon Numaranız","Posta Kodunuz","Yaşadığınız Eyalet","Ekonomik Durumunuz","Dil kursuna devam ediyor musunuz?","Yabancı dil Seviyeniz","Başka bir IT kursu (Bootcamp) bitirdiniz mi?","Daha önce herhangi bir IT iş tecrübeniz var mı?","Şu anda herhangi bir projeye dahil misiniz?","IT sektöründe hangi bölüm(ler)de çalışmak istiyorsunuz?","Neden VIT projesine katılmak istiyorsunuz?","Mentor gorusmesi","Basvuru Donemi") VALUES ({form_data[0]},{form_data[1]},{form_data[2]},{form_data[3]},{form_data[4]},{form_data[5]},{form_data[6]},{form_data[7]},{form_data[8]},{form_data[9]},{form_data[10]},{form_data[11]},{form_data[12]},{form_data[13]},{form_data[14]},{form_data[15]})'
+            # )
+            conn.commit()
+            cur.close()
+            conn.close()
 
-        try:
-            email_body = f"""
-            Merhabalar,
-
-            Aşağıdaki bilgilerle Vit projesine kayıt oldunuz:
-
-            Zaman Damgası: {form_data[0]}
-            Adınız Soyadınız: {form_data[1]}
-            Email Adresiniz: {form_data[2]}
-            Telefon Numaranız: {form_data[3]}
-            Posta Kodunuz: {form_data[4]}
-            Yaşadığınız Eyalet: {form_data[5]}
-            Ekonomik Durumunuz: {form_data[6]}
-            Dil Kursuna Devam: {form_data[7]}
-            Dil Seviyesi: {form_data[8]}
-            IT Kursu: {form_data[9]}
-            IT Deneyimi: {form_data[10]}
-            Katıldığı Proje: {form_data[11]}
-            Tercih Edilen Sektör: {form_data[12]}
-            Motivasyon: {form_data[13]}
-            """
-
-            send_email(form_data[2], email_body, "VIT Projesi Başvurunuz Hk.")
-            send_email("vit5crmproject@gmail.com", email_body, "Yeni Başvuru")
             QMessageBox.information(self, "Başarılı", "Form başarıyla gönderildi!")
 
             # İşlem tamamlandığında başarı mesajını göster
             self.show_success_message()
 
         except Exception as e:
+            print(e)
             QMessageBox.critical(
                 self, "Hata", f"E-posta gönderimi sırasında bir hata oluştu: {e}"
             )
