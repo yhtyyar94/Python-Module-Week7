@@ -3,7 +3,7 @@ from connect import connect
 
 def create_database_if_not_exists(dbname):
     # Connect to the PostgreSQL server
-    conn = connect()
+    conn = connect("crm")
     conn.autocommit = True
     cur = conn.cursor()
 

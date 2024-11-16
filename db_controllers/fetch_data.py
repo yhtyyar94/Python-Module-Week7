@@ -1,4 +1,4 @@
-from db_controllers.connect import connect
+from connect import connect
 
 
 def fetch_data(db_name, query):

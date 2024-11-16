@@ -1,5 +1,5 @@
 import psycopg2
-from db_controllers.config import load_config
+from config import load_config
 
 
 def connect(db_name):
@@ -12,6 +12,7 @@ def connect(db_name):
             host=config["host"],
             user=config["user"],
             password=config["password"],
+            port="5434"
         ) as conn:
             print("Connected to the PostgreSQL server.")
             return conn
