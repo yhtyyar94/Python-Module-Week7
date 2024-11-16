@@ -1,4 +1,4 @@
-from backend.read_xlsx import read_xlsx
+from read_xlsx import read_xlsx
 from connect import connect
 import sys
 import os

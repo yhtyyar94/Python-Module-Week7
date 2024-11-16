@@ -1,11 +1,10 @@
+from db_controllers.read_xlsx import read_xlsx
+from connect import connect
 import sys
 import os
 
 # Add the parent directory to the sys.path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
-from connect import connect
-from backend.read_xlsx import read_xlsx
 
 
 def insert_records_from_excel(db_name, file_name, table_name):
@@ -29,7 +28,8 @@ def insert_records_from_excel(db_name, file_name, table_name):
     # Generate SQL INSERT statement
     columns = ", ".join([f'"{header[:63]}"' for header in headers])
     placeholders = ", ".join(["%s"] * len(headers))
-    insert_query = f'INSERT INTO "{table_name}" ({columns}) VALUES ({placeholders})'
+    insert_query = f'INSERT INTO "{
+        table_name}" ({columns}) VALUES ({placeholders})'
 
     # Connect to PostgreSQL and execute the query
     conn = connect(db_name)
