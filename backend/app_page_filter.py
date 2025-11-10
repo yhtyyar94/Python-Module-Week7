@@ -5,7 +5,7 @@ from backend.read_xlsx import read_xlsx
 
 
 def app_page_filter(search_text, page_window, but_value):
-    file_name = "Basvurular.xlsx"
+    file_name = "Applications.xlsx"
     drive_files = list_drive_files()
 
     file_id = None
@@ -23,8 +23,7 @@ def app_page_filter(search_text, page_window, but_value):
     rows = read_xlsx(file_name)
 
     headers = [header for header in rows[0] if header is not None]
-    page_window.tableWidget.setColumnCount(
-        len(headers))  # bu satir neden lazim ?
+    page_window.tableWidget.setColumnCount(len(headers))  # bu satir neden lazim ?
     page_window.tableWidget.clear()
 
     def is_dublicate(but_value, rows):

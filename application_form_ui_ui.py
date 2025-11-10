@@ -259,7 +259,7 @@ class VITForm(QWidget):
 
     def submit_form(self, form_data):
         try:
-            file_name = "Basvurular.xlsx"
+            file_name = "Applications.xlsx"
             drive_files = list_drive_files()
             file_id = None
 

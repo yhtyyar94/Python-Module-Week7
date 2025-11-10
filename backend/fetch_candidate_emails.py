@@ -4,7 +4,7 @@ from backend.read_xlsx import read_xlsx
 
 
 def fetch_canditate_emails(comboBox, email_set_field=None):
-    file_name = "Basvurular.xlsx"
+    file_name = "Applications.xlsx"
     drive_files = list_drive_files()
     file_id = None
 

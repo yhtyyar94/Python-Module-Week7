@@ -12,8 +12,8 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.setFixedSize(800, 600)
-        MainWindow.setStyleSheet("background-image: url(./assets/zemin-buyuk.jpg);")
+        MainWindow.resize(800, 600)
+        MainWindow.setStyleSheet("background-image: url(:/assets/assets/zemin-buyuk.jpg);")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.tableWidget = QtWidgets.QTableWidget(parent=self.centralwidget)
@@ -134,14 +134,14 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.filter_select_button.setItemText(0, _translate("MainWindow", "Vıt Projesinin Tamamına Katılması Uygun Olur"))
-        self.filter_select_button.setItemText(1, _translate("MainWindow", "VIT Projesi ilk IT Eğtimi Al... ya Yönlendirilmesi Uygun Olur"))
-        self.filter_select_button.setItemText(2, _translate("MainWindow", "VIT Projesi İngilizce Eğtimi Al... ya Yönlendirilmesi Uygun Olur"))
-        self.filter_select_button.setItemText(3, _translate("MainWindow", "Vit Pojesi Kapsamında Dir.. Yönlendirilmesi Uygun Olur"))
-        self.filter_select_button.setItemText(4, _translate("MainWindow", "Direkt Bireysel Koçluk İle İşe Yönlendirilmesi Uygun Olur"))
-        self.filter_select_button.setItemText(5, _translate("MainWindow", "Bir Sonraki VIT Projesine Katılması Daha Uygun Olur"))
-        self.filter_select_button.setItemText(6, _translate("MainWindow", "Başka Bir Sektöre Yönlendirilmesi"))
-        self.filter_select_button.setItemText(7, _translate("MainWindow", "Diğer"))
+        self.filter_select_button.setItemText(0, _translate("MainWindow", "Participation in the Entire VIT Project is Appropriate"))
+        self.filter_select_button.setItemText(1, _translate("MainWindow", "It is Appropriate to Direct to the First IT Training of the VIT Project"))
+        self.filter_select_button.setItemText(2, _translate("MainWindow", "It is Appropriate to Direct to the English Training of the VIT Project"))
+        self.filter_select_button.setItemText(3, _translate("MainWindow", "It is Appropriate to Direct Within the Scope of the VIT Project"))
+        self.filter_select_button.setItemText(4, _translate("MainWindow", "It is Appropriate to Direct Directly to Employment with Individual Coaching"))
+        self.filter_select_button.setItemText(5, _translate("MainWindow", "Participation in the Next VIT Project is More Appropriate"))
+        self.filter_select_button.setItemText(6, _translate("MainWindow", "It is Appropriate to Direct to Another Sector"))
+        self.filter_select_button.setItemText(7, _translate("MainWindow", "Other"))
         self.label.setText(_translate("MainWindow", "Mentor Interview"))
         self.main_menu.setText(_translate("MainWindow", "Main Menu"))
         self.exit_button.setText(_translate("MainWindow", "Exit"))

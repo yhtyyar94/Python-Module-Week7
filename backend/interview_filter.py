@@ -5,7 +5,7 @@ from backend.read_xlsx import read_xlsx
 
 
 def interviews_page_filter_function(project_type, search_text, interviews_window):
-    file_name = "Mulakatlar.xlsx"
+    file_name = "Interviews.xlsx"
     drive_files = list_drive_files()
 
     file_id = None

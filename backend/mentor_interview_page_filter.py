@@ -5,7 +5,7 @@ from backend.read_xlsx import read_xlsx
 
 
 def mentor_interview_page_filter(comboBox, search_text, mentor_interview_window):
-    file_name = "Mentor.xlsx"
+    file_name = "Mentors.xlsx"
     drive_files = list_drive_files()
 
     file_id = None

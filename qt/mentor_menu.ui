@@ -54,42 +54,42 @@ color:black
     </property>
     <item>
      <property name="text">
-      <string>Vıt Projesinin Tamamına Katılması Uygun Olur</string>
+      <string>Participation in the Entire VIT Project is Appropriate</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>VIT Projesi ilk IT Eğtimi Al... ya Yönlendirilmesi Uygun Olur</string>
+      <string>It is Appropriate to Direct to the First IT Training of the VIT Project</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>VIT Projesi İngilizce Eğtimi Al... ya Yönlendirilmesi Uygun Olur</string>
+      <string>It is Appropriate to Direct to the English Training of the VIT Project</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Vit Pojesi Kapsamında Dir.. Yönlendirilmesi Uygun Olur</string>
+      <string>It is Appropriate to Direct Within the Scope of the VIT Project</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Direkt Bireysel Koçluk İle İşe Yönlendirilmesi Uygun Olur</string>
+      <string>It is Appropriate to Direct Directly to Employment with Individual Coaching</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Bir Sonraki VIT Projesine Katılması Daha Uygun Olur</string>
+      <string>Participation in the Next VIT Project is More Appropriate</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Başka Bir Sektöre Yönlendirilmesi</string>
+      <string>It is Appropriate to Direct to Another Sector</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Diğer</string>
+      <string>Other</string>
      </property>
     </item>
    </widget>
